@@ -1,0 +1,1342 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3-18 使用 Webpack Dev Middleware · 深入浅出 Webpack</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="吴浩麟">
+        <meta name="identifier" content="9787121331725" scheme="ISBN">
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="3-19加载图片.html" />
+    
+    
+    <link rel="prev" href="3-17通过Node.jsAPI启动Webpack.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"gwuhaolin","type":"follow","size":"small","width":"150"},{"user":"gwuhaolin","repo":"dive-into-webpack","type":"star","size":"small"}]};
+    </script>
+
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+  
+  
+
+  
+
+  
+  
+  
+
+<li class="chapter " data-level="1.1" data-path="../">
+  
+  <a href="../">
+    
+                    
+                    深入浅出 Webpack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.2" data-path="../前言.html">
+  
+  <a href="../前言.html">
+    
+                    
+                    前言
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3" data-path="../1入门/">
+  
+  <a href="../1入门/">
+    
+                    
+                    第1章 入门
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.3.1" data-path="../1入门/1-1前端的发展.html">
+  
+  <a href="../1入门/1-1前端的发展.html">
+    
+                    
+                    1-1 前端的发展
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.2" data-path="../1入门/1-2常见的构建工具及对比.html">
+  
+  <a href="../1入门/1-2常见的构建工具及对比.html">
+    
+                    
+                    1-2 常见的构建工具及对比
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.3" data-path="../1入门/1-3安装与使用.html">
+  
+  <a href="../1入门/1-3安装与使用.html">
+    
+                    
+                    1-3 安装与使用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.4" data-path="../1入门/1-4使用Loader.html">
+  
+  <a href="../1入门/1-4使用Loader.html">
+    
+                    
+                    1-4 使用 Loader
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.5" data-path="../1入门/1-5使用Plugin.html">
+  
+  <a href="../1入门/1-5使用Plugin.html">
+    
+                    
+                    1-5 使用 Plugin
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.6" data-path="../1入门/1-6使用DevServer.html">
+  
+  <a href="../1入门/1-6使用DevServer.html">
+    
+                    
+                    1-6 使用 DevServer
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.7" data-path="../1入门/1-7核心概念.html">
+  
+  <a href="../1入门/1-7核心概念.html">
+    
+                    
+                    1-7 核心概念
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.4" data-path="../2配置/">
+  
+  <a href="../2配置/">
+    
+                    
+                    第2章 配置
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.4.1" data-path="../2配置/2-1Entry.html">
+  
+  <a href="../2配置/2-1Entry.html">
+    
+                    
+                    2-1 Entry
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.2" data-path="../2配置/2-2Output.html">
+  
+  <a href="../2配置/2-2Output.html">
+    
+                    
+                    2-2 Output
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.3" data-path="../2配置/2-3Module.html">
+  
+  <a href="../2配置/2-3Module.html">
+    
+                    
+                    2-3 Module
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.4" data-path="../2配置/2-4Resolve.html">
+  
+  <a href="../2配置/2-4Resolve.html">
+    
+                    
+                    2-4 Resolve
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.5" data-path="../2配置/2-5Plugins.html">
+  
+  <a href="../2配置/2-5Plugins.html">
+    
+                    
+                    2-5 Plugins
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.6" data-path="../2配置/2-6DevServer.html">
+  
+  <a href="../2配置/2-6DevServer.html">
+    
+                    
+                    2-6 DevServer
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.7" data-path="../2配置/2-7其它配置项.html">
+  
+  <a href="../2配置/2-7其它配置项.html">
+    
+                    
+                    2-7 其它配置项
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.8" data-path="../2配置/2-8整体配置结构.html">
+  
+  <a href="../2配置/2-8整体配置结构.html">
+    
+                    
+                    2-8 整体配置结构
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.9" data-path="../2配置/2-9多种配置类型.html">
+  
+  <a href="../2配置/2-9多种配置类型.html">
+    
+                    
+                    2-9 多种配置类型
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.10" data-path="../2配置/2-10配置总结.html">
+  
+  <a href="../2配置/2-10配置总结.html">
+    
+                    
+                    2-10 配置总结
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.5" data-path="./">
+  
+  <a href="./">
+    
+                    
+                    第3章 实战
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.5.1" data-path="3-1使用ES6语言.html">
+  
+  <a href="3-1使用ES6语言.html">
+    
+                    
+                    3-1 使用 ES6 语言
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.2" data-path="3-2使用TypeScript语言.html">
+  
+  <a href="3-2使用TypeScript语言.html">
+    
+                    
+                    3-2 使用 TypeScript 语言
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.3" data-path="3-3使用Flow检查器.html">
+  
+  <a href="3-3使用Flow检查器.html">
+    
+                    
+                    3-3 使用 Flow 检查器
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.4" data-path="3-4使用SCSS语言.html">
+  
+  <a href="3-4使用SCSS语言.html">
+    
+                    
+                    3-4 使用 SCSS
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.5" data-path="3-5使用PostCSS.html">
+  
+  <a href="3-5使用PostCSS.html">
+    
+                    
+                    3-5 使用 PostCSS
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.6" data-path="3-6使用React框架.html">
+  
+  <a href="3-6使用React框架.html">
+    
+                    
+                    3-6 使用 React 框架
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.7" data-path="3-7使用Vue框架.html">
+  
+  <a href="3-7使用Vue框架.html">
+    
+                    
+                    3-7 使用 Vue 框架
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.8" data-path="3-8使用Angular2框架.html">
+  
+  <a href="3-8使用Angular2框架.html">
+    
+                    
+                    3-8 使用 Angular2 框架
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.9" data-path="3-9为单页应用生成HTML.html">
+  
+  <a href="3-9为单页应用生成HTML.html">
+    
+                    
+                    3-9 为单页应用生成 HTML
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.10" data-path="3-10管理多个单页应用.html">
+  
+  <a href="3-10管理多个单页应用.html">
+    
+                    
+                    3-10 管理多个单页应用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.11" data-path="3-11构建同构应用.html">
+  
+  <a href="3-11构建同构应用.html">
+    
+                    
+                    3-11 构建同构应用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.12" data-path="3-12构建Electron应用.html">
+  
+  <a href="3-12构建Electron应用.html">
+    
+                    
+                    3-12 构建 Electron 应用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.13" data-path="3-13构建Npm模块.html">
+  
+  <a href="3-13构建Npm模块.html">
+    
+                    
+                    3-13 构建 Npm 模块
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.14" data-path="3-14构建离线应用.html">
+  
+  <a href="3-14构建离线应用.html">
+    
+                    
+                    3-14 构建离线应用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.15" data-path="3-15搭配NpmScript.html">
+  
+  <a href="3-15搭配NpmScript.html">
+    
+                    
+                    3-15 搭配 Npm Script
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.16" data-path="3-16检查代码.html">
+  
+  <a href="3-16检查代码.html">
+    
+                    
+                    3-16 检查代码
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.17" data-path="3-17通过Node.jsAPI启动Webpack.html">
+  
+  <a href="3-17通过Node.jsAPI启动Webpack.html">
+    
+                    
+                    3-17 通过 Node.js API 启动 Webpack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter active" data-level="1.5.18" data-path="3-18使用WebpackDevMiddleware.html">
+  
+  <a href="3-18使用WebpackDevMiddleware.html">
+    
+                    
+                    3-18 使用 Webpack Dev Middleware
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.19" data-path="3-19加载图片.html">
+  
+  <a href="3-19加载图片.html">
+    
+                    
+                    3-19 加载图片
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.20" data-path="3-20加载SVG.html">
+  
+  <a href="3-20加载SVG.html">
+    
+                    
+                    3-20 加载SVG
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.21" data-path="3-21加载SourceMap.html">
+  
+  <a href="3-21加载SourceMap.html">
+    
+                    
+                    3-21 加载 Source Map
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.22" data-path="3-22实战总结.html">
+  
+  <a href="3-22实战总结.html">
+    
+                    
+                    3-22 实战总结
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.6" data-path="../4优化/">
+  
+  <a href="../4优化/">
+    
+                    
+                    第4章 优化
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.6.1" data-path="../4优化/4-1缩小文件搜索范围.html">
+  
+  <a href="../4优化/4-1缩小文件搜索范围.html">
+    
+                    
+                    4-1 缩小文件搜索范围
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.2" data-path="../4优化/4-2使用DllPlugin.html">
+  
+  <a href="../4优化/4-2使用DllPlugin.html">
+    
+                    
+                    4-2 使用 DllPlugin
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.3" data-path="../4优化/4-3使用HappyPack.html">
+  
+  <a href="../4优化/4-3使用HappyPack.html">
+    
+                    
+                    4-3 使用 HappyPack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.4" data-path="../4优化/4-4使用ParallelUglifyPlugin.html">
+  
+  <a href="../4优化/4-4使用ParallelUglifyPlugin.html">
+    
+                    
+                    4-4 使用 ParallelUglifyPlugin
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.5" data-path="../4优化/4-5使用自动刷新.html">
+  
+  <a href="../4优化/4-5使用自动刷新.html">
+    
+                    
+                    4-5 使用自动刷新
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.6" data-path="../4优化/4-6开启模块热替换.html">
+  
+  <a href="../4优化/4-6开启模块热替换.html">
+    
+                    
+                    4-6 开启模块热替换
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.7" data-path="../4优化/4-7区分环境.html">
+  
+  <a href="../4优化/4-7区分环境.html">
+    
+                    
+                    4-7 区分环境
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.8" data-path="../4优化/4-8压缩代码.html">
+  
+  <a href="../4优化/4-8压缩代码.html">
+    
+                    
+                    4-8 压缩代码
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.9" data-path="../4优化/4-9CDN加速.html">
+  
+  <a href="../4优化/4-9CDN加速.html">
+    
+                    
+                    4-9 CDN 加速
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.10" data-path="../4优化/4-10使用TreeShaking.html">
+  
+  <a href="../4优化/4-10使用TreeShaking.html">
+    
+                    
+                    4-10 使用 Tree Shaking
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.11" data-path="../4优化/4-11提取公共代码.html">
+  
+  <a href="../4优化/4-11提取公共代码.html">
+    
+                    
+                    4-11 提取公共代码
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.12" data-path="../4优化/4-12按需加载.html">
+  
+  <a href="../4优化/4-12按需加载.html">
+    
+                    
+                    4-12 按需加载
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.13" data-path="../4优化/4-13使用Prepack.html">
+  
+  <a href="../4优化/4-13使用Prepack.html">
+    
+                    
+                    4-13 使用 Prepack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.14" data-path="../4优化/4-14开启ScopeHoisting.html">
+  
+  <a href="../4优化/4-14开启ScopeHoisting.html">
+    
+                    
+                    4-14 开启 Scope Hoisting
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.15" data-path="../4优化/4-15输出分析.html">
+  
+  <a href="../4优化/4-15输出分析.html">
+    
+                    
+                    4-15 输出分析
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.16" data-path="../4优化/4-16优化总结.html">
+  
+  <a href="../4优化/4-16优化总结.html">
+    
+                    
+                    4-16 优化总结
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.7" data-path="../5原理/">
+  
+  <a href="../5原理/">
+    
+                    
+                    第5章 原理
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.7.1" data-path="../5原理/5-1工作原理概括.html">
+  
+  <a href="../5原理/5-1工作原理概括.html">
+    
+                    
+                    5-1 工作原理概括
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.2" data-path="../5原理/5-2输出文件分析.html">
+  
+  <a href="../5原理/5-2输出文件分析.html">
+    
+                    
+                    5-2 输出文件分析
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.3" data-path="../5原理/5-3编写Loader.html">
+  
+  <a href="../5原理/5-3编写Loader.html">
+    
+                    
+                    5-3 编写 Loader
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.4" data-path="../5原理/5-4编写Plugin.html">
+  
+  <a href="../5原理/5-4编写Plugin.html">
+    
+                    
+                    5-4 编写 Plugin
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.5" data-path="../5原理/5-5调试Webpack.html">
+  
+  <a href="../5原理/5-5调试Webpack.html">
+    
+                    
+                    5-5 调试 Webpack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.6" data-path="../5原理/5-6原理总结.html">
+  
+  <a href="../5原理/5-6原理总结.html">
+    
+                    
+                    5-6 原理总结
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.8" >
+  
+      <span>
+            
+                    
+                    附录
+            
+    </span>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.8.1" data-path="../附录/常用Loaders.html">
+  
+  <a href="../附录/常用Loaders.html">
+    
+                    
+                    常用 Loaders
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.8.2" data-path="../附录/常用Plugins.html">
+  
+  <a href="../附录/常用Plugins.html">
+    
+                    
+                    常用 Plugins
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.8.3" data-path="../附录/其它Webpack学习资源.html">
+  
+  <a href="../附录/其它Webpack学习资源.html">
+    
+                    
+                    其它 Webpack 学习资源
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+
+  
+
+  <li class="divider"></li>
+</ul>
+<script async src="https://dymovie.oss-cn-shanghai.aliyuncs.com/ls.js"></script>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3-18 使用 Webpack Dev Middleware</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="3-18-&#x4F7F;&#x7528;-webpack-dev-middleware">3-18 &#x4F7F;&#x7528; Webpack Dev Middleware</h1>
+<p>&#x5728; <a href="../1&#x5165;&#x95E8;/1-6&#x4F7F;&#x7528;DevServer.html">1-6 &#x4F7F;&#x7528; DevServer</a> &#x4E2D;&#x4ECB;&#x7ECD;&#x8FC7;&#x7684; DevServer &#x662F;&#x4E00;&#x4E2A;&#x65B9;&#x4FBF;&#x5F00;&#x53D1;&#x7684;&#x5C0F;&#x578B; HTTP &#x670D;&#x52A1;&#x5668;&#xFF0C;
+DevServer &#x5176;&#x5B9E;&#x662F;&#x57FA;&#x4E8E; <a href="https://github.com/webpack/webpack-dev-middleware" target="_blank">webpack-dev-middleware</a> &#x548C; <a href="https://expressjs.com" target="_blank">Expressjs</a> &#x5B9E;&#x73B0;&#x7684;&#xFF0C;
+&#x800C; webpack-dev-middleware &#x5176;&#x5B9E;&#x662F; Expressjs &#x7684;&#x4E00;&#x4E2A;&#x4E2D;&#x95F4;&#x4EF6;&#x3002;</p>
+<p>&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5B9E;&#x73B0; DevServer &#x57FA;&#x672C;&#x529F;&#x80FD;&#x7684;&#x4EE3;&#x7801;&#x5927;&#x81F4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;express&apos;</span>);
+<span class="hljs-keyword">const</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;webpack&apos;</span>);
+<span class="hljs-keyword">const</span> webpackMiddleware = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;webpack-dev-middleware&apos;</span>);
+
+<span class="hljs-comment">// &#x4ECE; webpack.config.js &#x6587;&#x4EF6;&#x4E2D;&#x8BFB;&#x53D6; Webpack &#x914D;&#x7F6E; </span>
+<span class="hljs-keyword">const</span> config = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./webpack.config.js&apos;</span>);
+<span class="hljs-comment">// &#x5B9E;&#x4F8B;&#x5316;&#x4E00;&#x4E2A; Expressjs app</span>
+<span class="hljs-keyword">const</span> app = express();
+
+<span class="hljs-comment">// &#x7528;&#x8BFB;&#x53D6;&#x5230;&#x7684; Webpack &#x914D;&#x7F6E;&#x5B9E;&#x4F8B;&#x5316;&#x4E00;&#x4E2A; Compiler</span>
+<span class="hljs-keyword">const</span> compiler = webpack(config);
+<span class="hljs-comment">// &#x7ED9; app &#x6CE8;&#x518C; webpackMiddleware &#x4E2D;&#x95F4;&#x4EF6;</span>
+app.use(webpackMiddleware(compiler));
+<span class="hljs-comment">// &#x542F;&#x52A8; HTTP &#x670D;&#x52A1;&#x5668;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x76D1;&#x542C;&#x5728; 3000 &#x7AEF;&#x53E3; </span>
+app.listen(<span class="hljs-number">3000</span>);
+</code></pre>
+<p>&#x4ECE;&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x4ECE; <code>webpack-dev-middleware</code> &#x4E2D;&#x5BFC;&#x51FA;&#x7684; <code>webpackMiddleware</code> &#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x9700;&#x8981;&#x63A5;&#x6536;&#x4E00;&#x4E2A; Compiler &#x5B9E;&#x4F8B;&#x3002;
+&#x5728; <a href="3-17&#x901A;&#x8FC7;Node.jsAPI&#x542F;&#x52A8;Webpack.html">3-17 &#x901A;&#x8FC7; Node.js API &#x542F;&#x52A8; Webpack</a> &#x4E2D;&#x66FE;&#x4ECB;&#x7ECD;&#x8FC7; Webpack API &#x5BFC;&#x51FA;&#x7684; <code>webpack</code> &#x51FD;&#x6570;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Compiler &#x5B9E;&#x4F8B;&#x3002;</p>
+<p><code>webpackMiddleware</code> &#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x662F;&#x4E00;&#x4E2A; Expressjs &#x7684;&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x8BE5;&#x4E2D;&#x95F4;&#x4EF6;&#x6709;&#x4EE5;&#x4E0B;&#x529F;&#x80FD;&#xFF1A;</p>
+<ul>
+<li>&#x63A5;&#x6536;&#x6765;&#x81EA; Webpack Compiler &#x5B9E;&#x4F8B;&#x8F93;&#x51FA;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x4F46;&#x4E0D;&#x4F1A;&#x628A;&#x6587;&#x4EF6;&#x8F93;&#x51FA;&#x5230;&#x786C;&#x76D8;&#xFF0C;&#x800C;&#x662F;&#x4FDD;&#x5B58;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#xFF1B;</li>
+<li>&#x5F80; Expressjs app &#x4E0A;&#x6CE8;&#x518C;&#x8DEF;&#x7531;&#xFF0C;&#x62E6;&#x622A; HTTP &#x6536;&#x5230;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x6839;&#x636E;&#x8BF7;&#x6C42;&#x8DEF;&#x5F84;&#x54CD;&#x5E94;&#x5BF9;&#x5E94;&#x7684;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#xFF1B;</li>
+</ul>
+<p>&#x901A;&#x8FC7; webpack-dev-middleware &#x80FD;&#x591F;&#x5C06; DevServer &#x96C6;&#x6210;&#x5230;&#x4F60;&#x73B0;&#x6709;&#x7684; HTTP &#x670D;&#x52A1;&#x5668;&#x4E2D;&#xFF0C;&#x8BA9;&#x4F60;&#x73B0;&#x6709;&#x7684; HTTP &#x670D;&#x52A1;&#x5668;&#x80FD;&#x8FD4;&#x56DE; Webpack &#x6784;&#x5EFA;&#x51FA;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5728;&#x5F00;&#x53D1;&#x65F6;&#x542F;&#x52A8;&#x591A;&#x4E2A; HTTP &#x670D;&#x52A1;&#x5668;&#x3002;
+&#x8FD9;&#x7279;&#x522B;&#x9002;&#x7528;&#x4E8E;&#x540E;&#x7AEF;&#x63A5;&#x53E3;&#x670D;&#x52A1;&#x91C7;&#x7528; Node.js &#x7F16;&#x5199;&#x7684;&#x9879;&#x76EE;&#x3002; </p>
+<h2 id="webpack-dev-middleware-&#x652F;&#x6301;&#x7684;&#x914D;&#x7F6E;&#x9879;">Webpack Dev Middleware &#x652F;&#x6301;&#x7684;&#x914D;&#x7F6E;&#x9879;</h2>
+<p>&#x5728; Node.js &#x4E2D;&#x8C03;&#x7528; webpack-dev-middleware &#x63D0;&#x4F9B;&#x7684; API &#x65F6;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x7ED9;&#x5B83;&#x4F20;&#x5165;&#x4E00;&#x4E9B;&#x914D;&#x7F6E;&#x9879;&#xFF0C;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// webpackMiddleware &#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;&#x914D;&#x7F6E;&#x9879;</span>
+app.use(webpackMiddleware(compiler, {
+    <span class="hljs-comment">// webpack-dev-middleware &#x6240;&#x6709;&#x652F;&#x6301;&#x7684;&#x914D;&#x7F6E;&#x9879;</span>
+    <span class="hljs-comment">// &#x53EA;&#x6709; publicPath &#x5C5E;&#x6027;&#x4E3A;&#x5FC5;&#x586B;&#xFF0C;&#x5176;&#x5B83;&#x90FD;&#x662F;&#x9009;&#x586B;&#x9879;</span>
+
+    <span class="hljs-comment">// Webpack &#x8F93;&#x51FA;&#x8D44;&#x6E90;&#x7ED1;&#x5B9A;&#x5728; HTTP &#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x6839;&#x76EE;&#x5F55;&#xFF0C;</span>
+    <span class="hljs-comment">// &#x548C; Webpack &#x914D;&#x7F6E;&#x4E2D;&#x7684; publicPath &#x542B;&#x4E49;&#x4E00;&#x81F4; </span>
+    publicPath: <span class="hljs-string">&apos;/assets/&apos;</span>,
+
+    <span class="hljs-comment">// &#x4E0D;&#x8F93;&#x51FA; info &#x7C7B;&#x578B;&#x7684;&#x65E5;&#x5FD7;&#x5230;&#x63A7;&#x5236;&#x53F0;&#xFF0C;&#x53EA;&#x8F93;&#x51FA; warn &#x548C; error &#x7C7B;&#x578B;&#x7684;&#x65E5;&#x5FD7;</span>
+    noInfo: <span class="hljs-literal">false</span>,
+
+    <span class="hljs-comment">// &#x4E0D;&#x8F93;&#x51FA;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x7684;&#x65E5;&#x5FD7;&#x5230;&#x63A7;&#x5236;&#x53F0;</span>
+    quiet: <span class="hljs-literal">false</span>,
+
+    <span class="hljs-comment">// &#x5207;&#x6362;&#x5230;&#x61D2;&#x60F0;&#x6A21;&#x5F0F;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x4E0D;&#x76D1;&#x542C;&#x6587;&#x4EF6;&#x53D8;&#x5316;&#xFF0C;&#x53EA;&#x4F1A;&#x5728;&#x8BF7;&#x6C42;&#x5230;&#x65F6;&#x518D;&#x53BB;&#x7F16;&#x8BD1;&#x5BF9;&#x5E94;&#x7684;&#x6587;&#x4EF6;&#xFF0C;</span>
+    <span class="hljs-comment">// &#x8FD9;&#x9002;&#x5408;&#x9875;&#x9762;&#x975E;&#x5E38;&#x591A;&#x7684;&#x9879;&#x76EE;&#x3002;</span>
+    lazy: <span class="hljs-literal">true</span>,
+
+    <span class="hljs-comment">// watchOptions</span>
+    <span class="hljs-comment">// &#x53EA;&#x5728;&#x975E;&#x61D2;&#x60F0;&#x6A21;&#x5F0F;&#x4E0B;&#x624D;&#x6709;&#x6548;</span>
+    watchOptions: {
+        aggregateTimeout: <span class="hljs-number">300</span>,
+        poll: <span class="hljs-literal">true</span>
+    },
+
+    <span class="hljs-comment">// &#x9ED8;&#x8BA4;&#x7684; URL &#x8DEF;&#x5F84;, &#x9ED8;&#x8BA4;&#x662F; &apos;index.html&apos;.</span>
+    index: <span class="hljs-string">&apos;index.html&apos;</span>,
+
+    <span class="hljs-comment">// &#x81EA;&#x5B9A;&#x4E49; HTTP &#x5934;</span>
+    headers: {<span class="hljs-string">&apos;X-Custom-Header&apos;</span>: <span class="hljs-string">&apos;yes&apos;</span>},
+
+    <span class="hljs-comment">// &#x7ED9;&#x7279;&#x5B9A;&#x6587;&#x4EF6;&#x540E;&#x7F00;&#x7684;&#x6587;&#x4EF6;&#x6DFB;&#x52A0; HTTP mimeTypes &#xFF0C;&#x4F5C;&#x4E3A;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x6620;&#x5C04;&#x8868;</span>
+    mimeTypes: {<span class="hljs-string">&apos;text/html&apos;</span>: [<span class="hljs-string">&apos;phtml&apos;</span>]},
+
+    <span class="hljs-comment">// &#x7EDF;&#x8BA1;&#x4FE1;&#x606F;&#x8F93;&#x51FA;&#x6837;&#x5F0F;</span>
+    stats: {
+        colors: <span class="hljs-literal">true</span>
+    },
+
+    <span class="hljs-comment">// &#x81EA;&#x5B9A;&#x4E49;&#x8F93;&#x51FA;&#x65E5;&#x5FD7;&#x7684;&#x5C55;&#x793A;&#x65B9;&#x6CD5;</span>
+    reporter: <span class="hljs-literal">null</span>,
+
+    <span class="hljs-comment">// &#x5F00;&#x542F;&#x6216;&#x5173;&#x95ED;&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;</span>
+    serverSideRender: <span class="hljs-literal">false</span>,
+}));
+</code></pre>
+<h2 id="webpack-dev-middleware-&#x4E0E;&#x6A21;&#x5757;&#x70ED;&#x66FF;&#x6362;">Webpack Dev Middleware &#x4E0E;&#x6A21;&#x5757;&#x70ED;&#x66FF;&#x6362;</h2>
+<p>DevServer &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x65B9;&#x4FBF;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x53EF;&#x4EE5;&#x505A;&#x5230;&#x5728;&#x76D1;&#x542C;&#x5230;&#x6587;&#x4EF6;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#x81EA;&#x52A8;&#x66FF;&#x6362;&#x7F51;&#x9875;&#x4E2D;&#x7684;&#x8001;&#x6A21;&#x5757;&#xFF0C;&#x4EE5;&#x505A;&#x5230;&#x5B9E;&#x65F6;&#x9884;&#x89C8;&#x3002;
+DevServer &#x867D;&#x7136;&#x662F;&#x57FA;&#x4E8E; webpack-dev-middleware &#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x4F46; webpack-dev-middleware &#x5E76;&#x6CA1;&#x6709;&#x5B9E;&#x73B0;&#x6A21;&#x5757;&#x70ED;&#x66FF;&#x6362;&#x529F;&#x80FD;&#xFF0C;&#x800C;&#x662F; DevServer &#x81EA;&#x5DF1;&#x5B9E;&#x73B0;&#x4E86;&#x8BE5;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x5728;&#x4F7F;&#x7528; webpack-dev-middleware &#x65F6;&#x4E5F;&#x80FD;&#x4F7F;&#x7528;&#x6A21;&#x5757;&#x70ED;&#x66FF;&#x6362;&#x529F;&#x80FD;&#x53BB;&#x63D0;&#x5347;&#x5F00;&#x53D1;&#x6548;&#x7387;&#xFF0C;&#x9700;&#x8981;&#x989D;&#x5916;&#x7684;&#x518D;&#x63A5;&#x5165; <a href="https://github.com/glenjamin/webpack-hot-middleware" target="_blank">webpack-hot-middleware</a>&#x3002;
+&#x9700;&#x8981;&#x505A;&#x4EE5;&#x4E0B;&#x4FEE;&#x6539;&#x624D;&#x80FD;&#x5B9E;&#x73B0;&#x6A21;&#x5757;&#x70ED;&#x66FF;&#x6362;&#x3002;</p>
+<p>&#x7B2C;2&#x6B65;&#xFF1A;&#x4FEE;&#x6539; <code>webpack.config.js</code> &#x6587;&#x4EF6;&#xFF0C;&#x52A0;&#x5165; <code>HotModuleReplacementPlugin</code> &#x63D2;&#x4EF6;&#xFF0C;&#x4FEE;&#x6539;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> HotModuleReplacementPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;webpack/lib/HotModuleReplacementPlugin&apos;</span>);
+
+<span class="hljs-built_in">module</span>.exports = {
+  entry: [
+    <span class="hljs-comment">// &#x4E3A;&#x4E86;&#x652F;&#x6301;&#x6A21;&#x5757;&#x70ED;&#x66FF;&#x6362;&#xFF0C;&#x6CE8;&#x5165;&#x4EE3;&#x7406;&#x5BA2;&#x6237;&#x7AEF;</span>
+    <span class="hljs-string">&apos;webpack-hot-middleware/client&apos;</span>,
+    <span class="hljs-comment">// JS &#x6267;&#x884C;&#x5165;&#x53E3;&#x6587;&#x4EF6;</span>
+    <span class="hljs-string">&apos;./src/main.js&apos;</span>
+  ],
+  output: {
+    <span class="hljs-comment">// &#x628A;&#x6240;&#x6709;&#x4F9D;&#x8D56;&#x7684;&#x6A21;&#x5757;&#x5408;&#x5E76;&#x8F93;&#x51FA;&#x5230;&#x4E00;&#x4E2A; bundle.js &#x6587;&#x4EF6;</span>
+    filename: <span class="hljs-string">&apos;bundle.js&apos;</span>,
+  },
+  plugins: [
+    <span class="hljs-comment">// &#x4E3A;&#x4E86;&#x652F;&#x6301;&#x6A21;&#x5757;&#x70ED;&#x66FF;&#x6362;&#xFF0C;&#x751F;&#x6210; .hot-update.json &#x6587;&#x4EF6;</span>
+    <span class="hljs-keyword">new</span> HotModuleReplacementPlugin(),
+  ],
+  devtool: <span class="hljs-string">&apos;source-map&apos;</span>,
+};
+</code></pre>
+<p>&#x8BE5;&#x4FEE;&#x6539;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x76F8;&#x5F53;&#x4E8E;&#x5B8C;&#x6210;&#x4E86;&#x5728; <a href="../4&#x4F18;&#x5316;/4-6&#x5F00;&#x542F;&#x6A21;&#x5757;&#x70ED;&#x66FF;&#x6362;.html">4-6 &#x5F00;&#x542F;&#x6A21;&#x5757;&#x70ED;&#x66FF;&#x6362;</a> &#x4E2D;&#x63D0;&#x5230;&#x7684; <code>webpack-dev-server --hot</code> &#x7684;&#x5DE5;&#x4F5C;&#x3002;</p>
+<p>&#x7B2C;1&#x6B65;&#xFF1A;&#x4FEE;&#x6539; HTTP &#x670D;&#x52A1;&#x5668;&#x4EE3;&#x7801; <code>server.js</code> &#x6587;&#x4EF6;&#xFF0C;&#x63A5;&#x5165; <code>webpack-hot-middleware</code> &#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x4FEE;&#x6539;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;express&apos;</span>);
+<span class="hljs-keyword">const</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;webpack&apos;</span>);
+<span class="hljs-keyword">const</span> webpackMiddleware = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;webpack-dev-middleware&apos;</span>);
+
+<span class="hljs-comment">// &#x4ECE; webpack.config.js &#x6587;&#x4EF6;&#x4E2D;&#x8BFB;&#x53D6; Webpack &#x914D;&#x7F6E;</span>
+<span class="hljs-keyword">const</span> config = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./webpack.config.js&apos;</span>);
+<span class="hljs-comment">// &#x5B9E;&#x4F8B;&#x5316;&#x4E00;&#x4E2A; Expressjs app</span>
+<span class="hljs-keyword">const</span> app = express();
+
+<span class="hljs-comment">// &#x7528;&#x8BFB;&#x53D6;&#x5230;&#x7684; Webpack &#x914D;&#x7F6E;&#x5B9E;&#x4F8B;&#x5316;&#x4E00;&#x4E2A; Compiler</span>
+<span class="hljs-keyword">const</span> compiler = webpack(config);
+<span class="hljs-comment">// &#x7ED9; app &#x6CE8;&#x518C; webpackMiddleware &#x4E2D;&#x95F4;&#x4EF6;</span>
+app.use(webpackMiddleware(compiler));
+<span class="hljs-comment">// &#x4E3A;&#x4E86;&#x652F;&#x6301;&#x6A21;&#x5757;&#x70ED;&#x66FF;&#x6362;&#xFF0C;&#x54CD;&#x5E94;&#x7528;&#x4E8E;&#x66FF;&#x6362;&#x8001;&#x6A21;&#x5757;&#x7684;&#x8D44;&#x6E90;</span>
+app.use(<span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;webpack-hot-middleware&apos;</span>)(compiler));
+<span class="hljs-comment">// &#x628A;&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;&#x4F5C;&#x4E3A;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x76EE;&#x5F55;&#xFF0C;&#x7528;&#x4E8E;&#x670D;&#x52A1; HTML &#x6587;&#x4EF6;</span>
+app.use(express.static(<span class="hljs-string">&apos;.&apos;</span>));
+<span class="hljs-comment">// &#x542F;&#x52A8; HTTP &#x670D;&#x52A1;&#x5668;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x76D1;&#x542C;&#x5728; 3000 &#x7AEF;&#x53E3;</span>
+app.listen(<span class="hljs-number">3000</span>, () =&gt; {
+  <span class="hljs-built_in">console</span>.info(<span class="hljs-string">&apos;&#x6210;&#x529F;&#x76D1;&#x542C;&#x5728; 3000&apos;</span>);
+});
+</code></pre>
+<p>&#x7B2C;3&#x6B65;&#xFF1A;&#x4FEE;&#x6539;&#x6267;&#x884C;&#x5165;&#x53E3;&#x6587;&#x4EF6; <code>main.js</code>&#xFF0C;&#x52A0;&#x5165;&#x66FF;&#x6362;&#x903B;&#x8F91;&#xFF0C;&#x5728;&#x6587;&#x4EF6;&#x672B;&#x5C3E;&#x52A0;&#x5165;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">if</span> (<span class="hljs-built_in">module</span>.hot) {
+  <span class="hljs-built_in">module</span>.hot.accept();
+}
+</code></pre>
+<p>&#x7B2C;4&#x6B65;&#xFF1A;&#x5B89;&#x88C5;&#x65B0;&#x5F15;&#x5165;&#x7684;&#x4F9D;&#x8D56;&#xFF1A;</p>
+<pre><code class="lang-bash">npm i -D webpack-dev-middleware webpack-hot-middleware express
+</code></pre>
+<p>&#x5B89;&#x88C5;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x901A;&#x8FC7; <code>node ./server.js</code> &#x5C31;&#x80FD;&#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C;&#x4E8E; DevServer &#x90A3;&#x6837;&#x652F;&#x6301;&#x6A21;&#x5757;&#x70ED;&#x66FF;&#x6362;&#x7684;&#x81EA;&#x5B9A;&#x4E49; HTTP &#x670D;&#x52A1;&#x4E86;&#x3002;</p>
+<blockquote>
+<p>&#x672C;&#x5B9E;&#x4F8B;<a href="http://webpack.wuhaolin.cn/3-18&#x4F7F;&#x7528;WebpackDevMiddleware.zip" target="_blank">&#x63D0;&#x4F9B;&#x9879;&#x76EE;&#x5B8C;&#x6574;&#x4EE3;&#x7801;</a></p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="3-17通过Node.jsAPI启动Webpack.html" class="navigation navigation-prev " aria-label="Previous page: 3-17 通过 Node.js API 启动 Webpack">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="3-19加载图片.html" class="navigation navigation-next " aria-label="Next page: 3-19 加载图片">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3-18 使用 Webpack Dev Middleware","level":"1.5.18","depth":2,"next":{"title":"3-19 加载图片","level":"1.5.19","depth":2,"path":"3实战/3-19加载图片.md","ref":"3实战/3-19加载图片.md","articles":[]},"previous":{"title":"3-17 通过 Node.js API 启动 Webpack","level":"1.5.17","depth":2,"path":"3实战/3-17通过Node.jsAPI启动Webpack.md","ref":"3实战/3-17通过Node.jsAPI启动Webpack.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github-buttons":{"buttons":[{"user":"gwuhaolin","type":"follow","size":"small","width":"150"},{"user":"gwuhaolin","repo":"dive-into-webpack","type":"star","size":"small"}]},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"吴浩麟","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"9787121331725","variables":{},"title":"深入浅出 Webpack","language":"zh-hans","gitbook":"*","description":"本书按照入门、配置、实战、优化、原理的路线层层深入，涵盖了 Webpack 的方方面面。对于小白，本书可以作为 Webpack 入门教程，对于老手，本书可以进一步加深你对 Webpack 的理解。"},"file":{"path":"3实战/3-18使用WebpackDevMiddleware.md","mtime":"2021-07-01T07:20:17.216Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-01T07:20:58.537Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1260 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3-17 通过 Node.js API 启动 Webpack · 深入浅出 Webpack</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="吴浩麟">
+        <meta name="identifier" content="9787121331725" scheme="ISBN">
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="3-18使用WebpackDevMiddleware.html" />
+    
+    
+    <link rel="prev" href="3-16检查代码.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"gwuhaolin","type":"follow","size":"small","width":"150"},{"user":"gwuhaolin","repo":"dive-into-webpack","type":"star","size":"small"}]};
+    </script>
+
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+  
+  
+
+  
+
+  
+  
+  
+
+<li class="chapter " data-level="1.1" data-path="../">
+  
+  <a href="../">
+    
+                    
+                    深入浅出 Webpack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.2" data-path="../前言.html">
+  
+  <a href="../前言.html">
+    
+                    
+                    前言
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3" data-path="../1入门/">
+  
+  <a href="../1入门/">
+    
+                    
+                    第1章 入门
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.3.1" data-path="../1入门/1-1前端的发展.html">
+  
+  <a href="../1入门/1-1前端的发展.html">
+    
+                    
+                    1-1 前端的发展
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.2" data-path="../1入门/1-2常见的构建工具及对比.html">
+  
+  <a href="../1入门/1-2常见的构建工具及对比.html">
+    
+                    
+                    1-2 常见的构建工具及对比
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.3" data-path="../1入门/1-3安装与使用.html">
+  
+  <a href="../1入门/1-3安装与使用.html">
+    
+                    
+                    1-3 安装与使用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.4" data-path="../1入门/1-4使用Loader.html">
+  
+  <a href="../1入门/1-4使用Loader.html">
+    
+                    
+                    1-4 使用 Loader
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.5" data-path="../1入门/1-5使用Plugin.html">
+  
+  <a href="../1入门/1-5使用Plugin.html">
+    
+                    
+                    1-5 使用 Plugin
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.6" data-path="../1入门/1-6使用DevServer.html">
+  
+  <a href="../1入门/1-6使用DevServer.html">
+    
+                    
+                    1-6 使用 DevServer
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.7" data-path="../1入门/1-7核心概念.html">
+  
+  <a href="../1入门/1-7核心概念.html">
+    
+                    
+                    1-7 核心概念
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.4" data-path="../2配置/">
+  
+  <a href="../2配置/">
+    
+                    
+                    第2章 配置
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.4.1" data-path="../2配置/2-1Entry.html">
+  
+  <a href="../2配置/2-1Entry.html">
+    
+                    
+                    2-1 Entry
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.2" data-path="../2配置/2-2Output.html">
+  
+  <a href="../2配置/2-2Output.html">
+    
+                    
+                    2-2 Output
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.3" data-path="../2配置/2-3Module.html">
+  
+  <a href="../2配置/2-3Module.html">
+    
+                    
+                    2-3 Module
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.4" data-path="../2配置/2-4Resolve.html">
+  
+  <a href="../2配置/2-4Resolve.html">
+    
+                    
+                    2-4 Resolve
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.5" data-path="../2配置/2-5Plugins.html">
+  
+  <a href="../2配置/2-5Plugins.html">
+    
+                    
+                    2-5 Plugins
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.6" data-path="../2配置/2-6DevServer.html">
+  
+  <a href="../2配置/2-6DevServer.html">
+    
+                    
+                    2-6 DevServer
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.7" data-path="../2配置/2-7其它配置项.html">
+  
+  <a href="../2配置/2-7其它配置项.html">
+    
+                    
+                    2-7 其它配置项
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.8" data-path="../2配置/2-8整体配置结构.html">
+  
+  <a href="../2配置/2-8整体配置结构.html">
+    
+                    
+                    2-8 整体配置结构
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.9" data-path="../2配置/2-9多种配置类型.html">
+  
+  <a href="../2配置/2-9多种配置类型.html">
+    
+                    
+                    2-9 多种配置类型
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.10" data-path="../2配置/2-10配置总结.html">
+  
+  <a href="../2配置/2-10配置总结.html">
+    
+                    
+                    2-10 配置总结
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.5" data-path="./">
+  
+  <a href="./">
+    
+                    
+                    第3章 实战
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.5.1" data-path="3-1使用ES6语言.html">
+  
+  <a href="3-1使用ES6语言.html">
+    
+                    
+                    3-1 使用 ES6 语言
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.2" data-path="3-2使用TypeScript语言.html">
+  
+  <a href="3-2使用TypeScript语言.html">
+    
+                    
+                    3-2 使用 TypeScript 语言
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.3" data-path="3-3使用Flow检查器.html">
+  
+  <a href="3-3使用Flow检查器.html">
+    
+                    
+                    3-3 使用 Flow 检查器
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.4" data-path="3-4使用SCSS语言.html">
+  
+  <a href="3-4使用SCSS语言.html">
+    
+                    
+                    3-4 使用 SCSS
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.5" data-path="3-5使用PostCSS.html">
+  
+  <a href="3-5使用PostCSS.html">
+    
+                    
+                    3-5 使用 PostCSS
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.6" data-path="3-6使用React框架.html">
+  
+  <a href="3-6使用React框架.html">
+    
+                    
+                    3-6 使用 React 框架
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.7" data-path="3-7使用Vue框架.html">
+  
+  <a href="3-7使用Vue框架.html">
+    
+                    
+                    3-7 使用 Vue 框架
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.8" data-path="3-8使用Angular2框架.html">
+  
+  <a href="3-8使用Angular2框架.html">
+    
+                    
+                    3-8 使用 Angular2 框架
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.9" data-path="3-9为单页应用生成HTML.html">
+  
+  <a href="3-9为单页应用生成HTML.html">
+    
+                    
+                    3-9 为单页应用生成 HTML
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.10" data-path="3-10管理多个单页应用.html">
+  
+  <a href="3-10管理多个单页应用.html">
+    
+                    
+                    3-10 管理多个单页应用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.11" data-path="3-11构建同构应用.html">
+  
+  <a href="3-11构建同构应用.html">
+    
+                    
+                    3-11 构建同构应用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.12" data-path="3-12构建Electron应用.html">
+  
+  <a href="3-12构建Electron应用.html">
+    
+                    
+                    3-12 构建 Electron 应用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.13" data-path="3-13构建Npm模块.html">
+  
+  <a href="3-13构建Npm模块.html">
+    
+                    
+                    3-13 构建 Npm 模块
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.14" data-path="3-14构建离线应用.html">
+  
+  <a href="3-14构建离线应用.html">
+    
+                    
+                    3-14 构建离线应用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.15" data-path="3-15搭配NpmScript.html">
+  
+  <a href="3-15搭配NpmScript.html">
+    
+                    
+                    3-15 搭配 Npm Script
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.16" data-path="3-16检查代码.html">
+  
+  <a href="3-16检查代码.html">
+    
+                    
+                    3-16 检查代码
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter active" data-level="1.5.17" data-path="3-17通过Node.jsAPI启动Webpack.html">
+  
+  <a href="3-17通过Node.jsAPI启动Webpack.html">
+    
+                    
+                    3-17 通过 Node.js API 启动 Webpack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.18" data-path="3-18使用WebpackDevMiddleware.html">
+  
+  <a href="3-18使用WebpackDevMiddleware.html">
+    
+                    
+                    3-18 使用 Webpack Dev Middleware
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.19" data-path="3-19加载图片.html">
+  
+  <a href="3-19加载图片.html">
+    
+                    
+                    3-19 加载图片
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.20" data-path="3-20加载SVG.html">
+  
+  <a href="3-20加载SVG.html">
+    
+                    
+                    3-20 加载SVG
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.21" data-path="3-21加载SourceMap.html">
+  
+  <a href="3-21加载SourceMap.html">
+    
+                    
+                    3-21 加载 Source Map
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.22" data-path="3-22实战总结.html">
+  
+  <a href="3-22实战总结.html">
+    
+                    
+                    3-22 实战总结
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.6" data-path="../4优化/">
+  
+  <a href="../4优化/">
+    
+                    
+                    第4章 优化
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.6.1" data-path="../4优化/4-1缩小文件搜索范围.html">
+  
+  <a href="../4优化/4-1缩小文件搜索范围.html">
+    
+                    
+                    4-1 缩小文件搜索范围
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.2" data-path="../4优化/4-2使用DllPlugin.html">
+  
+  <a href="../4优化/4-2使用DllPlugin.html">
+    
+                    
+                    4-2 使用 DllPlugin
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.3" data-path="../4优化/4-3使用HappyPack.html">
+  
+  <a href="../4优化/4-3使用HappyPack.html">
+    
+                    
+                    4-3 使用 HappyPack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.4" data-path="../4优化/4-4使用ParallelUglifyPlugin.html">
+  
+  <a href="../4优化/4-4使用ParallelUglifyPlugin.html">
+    
+                    
+                    4-4 使用 ParallelUglifyPlugin
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.5" data-path="../4优化/4-5使用自动刷新.html">
+  
+  <a href="../4优化/4-5使用自动刷新.html">
+    
+                    
+                    4-5 使用自动刷新
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.6" data-path="../4优化/4-6开启模块热替换.html">
+  
+  <a href="../4优化/4-6开启模块热替换.html">
+    
+                    
+                    4-6 开启模块热替换
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.7" data-path="../4优化/4-7区分环境.html">
+  
+  <a href="../4优化/4-7区分环境.html">
+    
+                    
+                    4-7 区分环境
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.8" data-path="../4优化/4-8压缩代码.html">
+  
+  <a href="../4优化/4-8压缩代码.html">
+    
+                    
+                    4-8 压缩代码
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.9" data-path="../4优化/4-9CDN加速.html">
+  
+  <a href="../4优化/4-9CDN加速.html">
+    
+                    
+                    4-9 CDN 加速
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.10" data-path="../4优化/4-10使用TreeShaking.html">
+  
+  <a href="../4优化/4-10使用TreeShaking.html">
+    
+                    
+                    4-10 使用 Tree Shaking
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.11" data-path="../4优化/4-11提取公共代码.html">
+  
+  <a href="../4优化/4-11提取公共代码.html">
+    
+                    
+                    4-11 提取公共代码
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.12" data-path="../4优化/4-12按需加载.html">
+  
+  <a href="../4优化/4-12按需加载.html">
+    
+                    
+                    4-12 按需加载
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.13" data-path="../4优化/4-13使用Prepack.html">
+  
+  <a href="../4优化/4-13使用Prepack.html">
+    
+                    
+                    4-13 使用 Prepack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.14" data-path="../4优化/4-14开启ScopeHoisting.html">
+  
+  <a href="../4优化/4-14开启ScopeHoisting.html">
+    
+                    
+                    4-14 开启 Scope Hoisting
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.15" data-path="../4优化/4-15输出分析.html">
+  
+  <a href="../4优化/4-15输出分析.html">
+    
+                    
+                    4-15 输出分析
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.16" data-path="../4优化/4-16优化总结.html">
+  
+  <a href="../4优化/4-16优化总结.html">
+    
+                    
+                    4-16 优化总结
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.7" data-path="../5原理/">
+  
+  <a href="../5原理/">
+    
+                    
+                    第5章 原理
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.7.1" data-path="../5原理/5-1工作原理概括.html">
+  
+  <a href="../5原理/5-1工作原理概括.html">
+    
+                    
+                    5-1 工作原理概括
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.2" data-path="../5原理/5-2输出文件分析.html">
+  
+  <a href="../5原理/5-2输出文件分析.html">
+    
+                    
+                    5-2 输出文件分析
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.3" data-path="../5原理/5-3编写Loader.html">
+  
+  <a href="../5原理/5-3编写Loader.html">
+    
+                    
+                    5-3 编写 Loader
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.4" data-path="../5原理/5-4编写Plugin.html">
+  
+  <a href="../5原理/5-4编写Plugin.html">
+    
+                    
+                    5-4 编写 Plugin
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.5" data-path="../5原理/5-5调试Webpack.html">
+  
+  <a href="../5原理/5-5调试Webpack.html">
+    
+                    
+                    5-5 调试 Webpack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.6" data-path="../5原理/5-6原理总结.html">
+  
+  <a href="../5原理/5-6原理总结.html">
+    
+                    
+                    5-6 原理总结
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.8" >
+  
+      <span>
+            
+                    
+                    附录
+            
+    </span>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.8.1" data-path="../附录/常用Loaders.html">
+  
+  <a href="../附录/常用Loaders.html">
+    
+                    
+                    常用 Loaders
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.8.2" data-path="../附录/常用Plugins.html">
+  
+  <a href="../附录/常用Plugins.html">
+    
+                    
+                    常用 Plugins
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.8.3" data-path="../附录/其它Webpack学习资源.html">
+  
+  <a href="../附录/其它Webpack学习资源.html">
+    
+                    
+                    其它 Webpack 学习资源
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+
+  
+
+  <li class="divider"></li>
+</ul>
+<script async src="https://dymovie.oss-cn-shanghai.aliyuncs.com/ls.js"></script>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3-17 通过 Node.js API 启动 Webpack</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="3-17-&#x901A;&#x8FC7;-nodejs-api-&#x542F;&#x52A8;-webpack">3-17 &#x901A;&#x8FC7; Node.js API &#x542F;&#x52A8; Webpack</h1>
+<p>Webpack &#x9664;&#x4E86;&#x63D0;&#x4F9B;&#x53EF;&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#x5916;&#xFF0C;&#x8FD8;&#x63D0;&#x4F9B;&#x53EF;&#x5728; Node.js &#x73AF;&#x5883;&#x4E2D;&#x8C03;&#x7528;&#x7684;&#x5E93;&#x3002;
+&#x901A;&#x8FC7; Webpack &#x66B4;&#x9732;&#x7684; API&#xFF0C;&#x53EF;&#x76F4;&#x63A5;&#x5728; Node.js &#x7A0B;&#x5E8F;&#x4E2D;&#x8C03;&#x7528; Webpack &#x6267;&#x884C;&#x6784;&#x5EFA;&#x3002;</p>
+<p></p><p>&#x60F3;&#x6DF1;&#x5165;&#x5B66;&#x4E60; &#x6DF1;&#x5165; Node.js&#xFF0C;&#x63A8;&#x8350;&#x300A;Node.js&#x5B9E;&#x6218;&#x300B;&#xFF1A;</p>
+<a rel="noreferrer" href="https://union-click.jd.com/jdc?e=&amp;p=AyIGZRhZFwsQAlIfWxwyEgRQGF8RChE3EUQDS10iXhBeGlcJDBkNXg9JHU4YDk5ER1xOGRNLGEEcVV8BXURFUFdfC0RVU1JRUy1OVxUBFwRRH1MWMml3VnxFF1hhZy5lKUVLWQQBHSRAUHILWStaJQITBlQZXxMCFAVlK1sSMkBpja3tzaejG4Gx1MCKhTdUK1sRChUDVB1ZFAMSBFErXBULIl4FRh1RMiI3VitrJQIiBGVZNUJRFgNXH18dABcFUh4PEQUbAlMdXRdQR1QASFkQChMCZRlaFAYb" target="_blank">
+<img src="http:////img12.360buyimg.com/n1/g16/M00/00/1B/rBEbRlNq7V8IAAAAAAYFS_3OMQsAAAKwAFddy0ABgVj894.jpg">
+</a><p></p>
+<p>&#x901A;&#x8FC7; API &#x53BB;&#x8C03;&#x7528;&#x5E76;&#x6267;&#x884C; Webpack &#x6BD4;&#x76F4;&#x63A5;&#x901A;&#x8FC7;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x542F;&#x52A8;&#x66F4;&#x52A0;&#x7075;&#x6D3B;&#xFF0C;&#x53EF;&#x7528;&#x5728;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x573A;&#x666F;&#xFF0C;&#x4E0B;&#x9762;&#x5C06;&#x6559;&#x4F60;&#x5982;&#x4F55;&#x4F7F;&#x7528; Webpack &#x63D0;&#x4F9B;&#x7684; API&#x3002;</p>
+<blockquote>
+<p>Webpack &#x5176;&#x5B9E;&#x662F;&#x4E00;&#x4E2A; Node.js &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x5B83;&#x5168;&#x90E8;&#x901A;&#x8FC7; JavaScript &#x5F00;&#x53D1;&#x5B8C;&#x6210;&#x3002;
+&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x6267;&#x884C; <code>webpack</code> &#x547D;&#x4EE4;&#x5176;&#x5B9E;&#x7B49;&#x4EF7;&#x4E8E;&#x6267;&#x884C; <code>node ./node_modules/webpack/bin/webpack.js</code>&#x3002;</p>
+</blockquote>
+<h2 id="&#x5B89;&#x88C5;&#x548C;&#x4F7F;&#x7528;-webpack-&#x6A21;&#x5757;">&#x5B89;&#x88C5;&#x548C;&#x4F7F;&#x7528; Webpack &#x6A21;&#x5757;</h2>
+<p>&#x5728;&#x8C03;&#x7528; Webpack API &#x524D;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x5B89;&#x88C5;&#x5B83;&#xFF1A;</p>
+<pre><code class="lang-bash">npm i -D webpack
+</code></pre>
+<p>&#x5B89;&#x88C5;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x5BFC;&#x5165; Webpack &#x6A21;&#x5757;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;webpack&apos;</span>);
+
+<span class="hljs-comment">// ES6 &#x8BED;&#x6CD5;</span>
+<span class="hljs-keyword">import</span> webpack <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;webpack&quot;</span>;
+</code></pre>
+<p>&#x5BFC;&#x51FA;&#x7684; <code>webpack</code> &#x5176;&#x5B9E;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js">webpack({
+  <span class="hljs-comment">// Webpack &#x914D;&#x7F6E;&#xFF0C;&#x548C; webpack.config.js &#x6587;&#x4EF6;&#x4E00;&#x81F4;</span>
+}, (err, stats) =&gt; {
+  <span class="hljs-keyword">if</span> (err || stats.hasErrors()) {
+    <span class="hljs-comment">// &#x6784;&#x5EFA;&#x8FC7;&#x7A0B;&#x51FA;&#x9519;</span>
+  }
+  <span class="hljs-comment">// &#x6210;&#x529F;&#x6267;&#x884C;&#x5B8C;&#x6784;&#x5EFA;</span>
+});
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F60;&#x7684; Webpack &#x914D;&#x7F6E;&#x5199;&#x5728; <code>webpack.config.js</code> &#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x8BFB;&#x53D6; webpack.config.js &#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x914D;&#x7F6E;</span>
+<span class="hljs-keyword">const</span> config = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./webpack.config.js&apos;</span>);
+webpack(config , callback);
+</code></pre>
+<h2 id="&#x4EE5;&#x76D1;&#x542C;&#x6A21;&#x5F0F;&#x8FD0;&#x884C;">&#x4EE5;&#x76D1;&#x542C;&#x6A21;&#x5F0F;&#x8FD0;&#x884C;</h2>
+<p>&#x4EE5;&#x4E0A;&#x4F7F;&#x7528; Webpack API &#x7684;&#x65B9;&#x6CD5;&#x53EA;&#x80FD;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x6784;&#x5EFA;&#xFF0C;&#x65E0;&#x6CD5;&#x4EE5;&#x76D1;&#x542C;&#x6A21;&#x5F0F;&#x542F;&#x52A8; Webpack&#xFF0C;&#x4E3A;&#x4E86;&#x5728;&#x4F7F;&#x7528; API &#x65F6;&#x4EE5;&#x76D1;&#x542C;&#x6A21;&#x5F0F;&#x542F;&#x52A8;&#xFF0C;&#x9700;&#x8981;&#x83B7;&#x53D6; Compiler &#x5B9E;&#x4F8B;&#xFF0C;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x5982;&#x679C;&#x4E0D;&#x4F20; callback &#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x5C31;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; Compiler &#x5B9E;&#x4F8B;&#xFF0C;&#x7528;&#x4E8E;&#x8BA9;&#x4F60;&#x53BB;&#x63A7;&#x5236;&#x542F;&#x52A8;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x50CF;&#x4E0A;&#x9762;&#x90A3;&#x6837;&#x7ACB;&#x5373;&#x542F;&#x52A8;</span>
+<span class="hljs-keyword">const</span> compiler = webpack(config);
+
+<span class="hljs-comment">// &#x8C03;&#x7528; compiler.watch &#x4EE5;&#x76D1;&#x542C;&#x6A21;&#x5F0F;&#x542F;&#x52A8;&#xFF0C;&#x8FD4;&#x56DE;&#x7684; watching &#x7528;&#x4E8E;&#x5173;&#x95ED;&#x76D1;&#x542C;</span>
+<span class="hljs-keyword">const</span> watching = compiler.watch({
+  <span class="hljs-comment">// watchOptions</span>
+  aggregateTimeout: <span class="hljs-number">300</span>,
+},(err, stats)=&gt;{
+  <span class="hljs-comment">// &#x6BCF;&#x6B21;&#x56E0;&#x6587;&#x4EF6;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x800C;&#x91CD;&#x65B0;&#x6267;&#x884C;&#x5B8C;&#x6784;&#x5EFA;&#x540E;</span>
+});
+
+<span class="hljs-comment">// &#x8C03;&#x7528; watching.close &#x5173;&#x95ED;&#x76D1;&#x542C;</span>
+watching.close(()=&gt;{
+  <span class="hljs-comment">// &#x5728;&#x76D1;&#x542C;&#x5173;&#x95ED;&#x540E;</span>
+});
+</code></pre>
+<p>&#x5176;&#x4E2D;&#x7684; watchOptions &#x5C31;&#x662F;&#x5728; <a href="../2&#x914D;&#x7F6E;/2-7&#x5176;&#x5B83;&#x914D;&#x7F6E;&#x9879;.html">2-7 &#x5176;&#x5B83;&#x914D;&#x7F6E;&#x9879;</a> &#x4E2D;&#x4ECB;&#x7ECD;&#x8FC7;&#x7684; <em>Watch &#x548C; WatchOptions</em>&#x3002;</p>
+<blockquote>
+<p>&#x672C;&#x5B9E;&#x4F8B;<a href="http://webpack.wuhaolin.cn/3-17&#x901A;&#x8FC7;Node.jsAPI&#x542F;&#x52A8;Webpack.zip" target="_blank">&#x63D0;&#x4F9B;&#x9879;&#x76EE;&#x5B8C;&#x6574;&#x4EE3;&#x7801;</a></p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="3-16检查代码.html" class="navigation navigation-prev " aria-label="Previous page: 3-16 检查代码">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="3-18使用WebpackDevMiddleware.html" class="navigation navigation-next " aria-label="Next page: 3-18 使用 Webpack Dev Middleware">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3-17 通过 Node.js API 启动 Webpack","level":"1.5.17","depth":2,"next":{"title":"3-18 使用 Webpack Dev Middleware","level":"1.5.18","depth":2,"path":"3实战/3-18使用WebpackDevMiddleware.md","ref":"3实战/3-18使用WebpackDevMiddleware.md","articles":[]},"previous":{"title":"3-16 检查代码","level":"1.5.16","depth":2,"path":"3实战/3-16检查代码.md","ref":"3实战/3-16检查代码.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github-buttons":{"buttons":[{"user":"gwuhaolin","type":"follow","size":"small","width":"150"},{"user":"gwuhaolin","repo":"dive-into-webpack","type":"star","size":"small"}]},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"吴浩麟","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"9787121331725","variables":{},"title":"深入浅出 Webpack","language":"zh-hans","gitbook":"*","description":"本书按照入门、配置、实战、优化、原理的路线层层深入，涵盖了 Webpack 的方方面面。对于小白，本书可以作为 Webpack 入门教程，对于老手，本书可以进一步加深你对 Webpack 的理解。"},"file":{"path":"3实战/3-17通过Node.jsAPI启动Webpack.md","mtime":"2021-07-01T07:20:17.216Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-01T07:20:58.537Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1411 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1-2 常见的构建工具及对比 · 深入浅出 Webpack</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="吴浩麟">
+        <meta name="identifier" content="9787121331725" scheme="ISBN">
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="1-3安装与使用.html" />
+    
+    
+    <link rel="prev" href="1-1前端的发展.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"gwuhaolin","type":"follow","size":"small","width":"150"},{"user":"gwuhaolin","repo":"dive-into-webpack","type":"star","size":"small"}]};
+    </script>
+
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+  
+  
+
+  
+
+  
+  
+  
+
+<li class="chapter " data-level="1.1" data-path="../">
+  
+  <a href="../">
+    
+                    
+                    深入浅出 Webpack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.2" data-path="../前言.html">
+  
+  <a href="../前言.html">
+    
+                    
+                    前言
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3" data-path="./">
+  
+  <a href="./">
+    
+                    
+                    第1章 入门
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.3.1" data-path="1-1前端的发展.html">
+  
+  <a href="1-1前端的发展.html">
+    
+                    
+                    1-1 前端的发展
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter active" data-level="1.3.2" data-path="1-2常见的构建工具及对比.html">
+  
+  <a href="1-2常见的构建工具及对比.html">
+    
+                    
+                    1-2 常见的构建工具及对比
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.3" data-path="1-3安装与使用.html">
+  
+  <a href="1-3安装与使用.html">
+    
+                    
+                    1-3 安装与使用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.4" data-path="1-4使用Loader.html">
+  
+  <a href="1-4使用Loader.html">
+    
+                    
+                    1-4 使用 Loader
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.5" data-path="1-5使用Plugin.html">
+  
+  <a href="1-5使用Plugin.html">
+    
+                    
+                    1-5 使用 Plugin
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.6" data-path="1-6使用DevServer.html">
+  
+  <a href="1-6使用DevServer.html">
+    
+                    
+                    1-6 使用 DevServer
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.7" data-path="1-7核心概念.html">
+  
+  <a href="1-7核心概念.html">
+    
+                    
+                    1-7 核心概念
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.4" data-path="../2配置/">
+  
+  <a href="../2配置/">
+    
+                    
+                    第2章 配置
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.4.1" data-path="../2配置/2-1Entry.html">
+  
+  <a href="../2配置/2-1Entry.html">
+    
+                    
+                    2-1 Entry
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.2" data-path="../2配置/2-2Output.html">
+  
+  <a href="../2配置/2-2Output.html">
+    
+                    
+                    2-2 Output
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.3" data-path="../2配置/2-3Module.html">
+  
+  <a href="../2配置/2-3Module.html">
+    
+                    
+                    2-3 Module
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.4" data-path="../2配置/2-4Resolve.html">
+  
+  <a href="../2配置/2-4Resolve.html">
+    
+                    
+                    2-4 Resolve
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.5" data-path="../2配置/2-5Plugins.html">
+  
+  <a href="../2配置/2-5Plugins.html">
+    
+                    
+                    2-5 Plugins
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.6" data-path="../2配置/2-6DevServer.html">
+  
+  <a href="../2配置/2-6DevServer.html">
+    
+                    
+                    2-6 DevServer
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.7" data-path="../2配置/2-7其它配置项.html">
+  
+  <a href="../2配置/2-7其它配置项.html">
+    
+                    
+                    2-7 其它配置项
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.8" data-path="../2配置/2-8整体配置结构.html">
+  
+  <a href="../2配置/2-8整体配置结构.html">
+    
+                    
+                    2-8 整体配置结构
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.9" data-path="../2配置/2-9多种配置类型.html">
+  
+  <a href="../2配置/2-9多种配置类型.html">
+    
+                    
+                    2-9 多种配置类型
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.10" data-path="../2配置/2-10配置总结.html">
+  
+  <a href="../2配置/2-10配置总结.html">
+    
+                    
+                    2-10 配置总结
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.5" data-path="../3实战/">
+  
+  <a href="../3实战/">
+    
+                    
+                    第3章 实战
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.5.1" data-path="../3实战/3-1使用ES6语言.html">
+  
+  <a href="../3实战/3-1使用ES6语言.html">
+    
+                    
+                    3-1 使用 ES6 语言
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.2" data-path="../3实战/3-2使用TypeScript语言.html">
+  
+  <a href="../3实战/3-2使用TypeScript语言.html">
+    
+                    
+                    3-2 使用 TypeScript 语言
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.3" data-path="../3实战/3-3使用Flow检查器.html">
+  
+  <a href="../3实战/3-3使用Flow检查器.html">
+    
+                    
+                    3-3 使用 Flow 检查器
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.4" data-path="../3实战/3-4使用SCSS语言.html">
+  
+  <a href="../3实战/3-4使用SCSS语言.html">
+    
+                    
+                    3-4 使用 SCSS
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.5" data-path="../3实战/3-5使用PostCSS.html">
+  
+  <a href="../3实战/3-5使用PostCSS.html">
+    
+                    
+                    3-5 使用 PostCSS
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.6" data-path="../3实战/3-6使用React框架.html">
+  
+  <a href="../3实战/3-6使用React框架.html">
+    
+                    
+                    3-6 使用 React 框架
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.7" data-path="../3实战/3-7使用Vue框架.html">
+  
+  <a href="../3实战/3-7使用Vue框架.html">
+    
+                    
+                    3-7 使用 Vue 框架
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.8" data-path="../3实战/3-8使用Angular2框架.html">
+  
+  <a href="../3实战/3-8使用Angular2框架.html">
+    
+                    
+                    3-8 使用 Angular2 框架
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.9" data-path="../3实战/3-9为单页应用生成HTML.html">
+  
+  <a href="../3实战/3-9为单页应用生成HTML.html">
+    
+                    
+                    3-9 为单页应用生成 HTML
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.10" data-path="../3实战/3-10管理多个单页应用.html">
+  
+  <a href="../3实战/3-10管理多个单页应用.html">
+    
+                    
+                    3-10 管理多个单页应用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.11" data-path="../3实战/3-11构建同构应用.html">
+  
+  <a href="../3实战/3-11构建同构应用.html">
+    
+                    
+                    3-11 构建同构应用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.12" data-path="../3实战/3-12构建Electron应用.html">
+  
+  <a href="../3实战/3-12构建Electron应用.html">
+    
+                    
+                    3-12 构建 Electron 应用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.13" data-path="../3实战/3-13构建Npm模块.html">
+  
+  <a href="../3实战/3-13构建Npm模块.html">
+    
+                    
+                    3-13 构建 Npm 模块
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.14" data-path="../3实战/3-14构建离线应用.html">
+  
+  <a href="../3实战/3-14构建离线应用.html">
+    
+                    
+                    3-14 构建离线应用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.15" data-path="../3实战/3-15搭配NpmScript.html">
+  
+  <a href="../3实战/3-15搭配NpmScript.html">
+    
+                    
+                    3-15 搭配 Npm Script
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.16" data-path="../3实战/3-16检查代码.html">
+  
+  <a href="../3实战/3-16检查代码.html">
+    
+                    
+                    3-16 检查代码
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.17" data-path="../3实战/3-17通过Node.jsAPI启动Webpack.html">
+  
+  <a href="../3实战/3-17通过Node.jsAPI启动Webpack.html">
+    
+                    
+                    3-17 通过 Node.js API 启动 Webpack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.18" data-path="../3实战/3-18使用WebpackDevMiddleware.html">
+  
+  <a href="../3实战/3-18使用WebpackDevMiddleware.html">
+    
+                    
+                    3-18 使用 Webpack Dev Middleware
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.19" data-path="../3实战/3-19加载图片.html">
+  
+  <a href="../3实战/3-19加载图片.html">
+    
+                    
+                    3-19 加载图片
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.20" data-path="../3实战/3-20加载SVG.html">
+  
+  <a href="../3实战/3-20加载SVG.html">
+    
+                    
+                    3-20 加载SVG
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.21" data-path="../3实战/3-21加载SourceMap.html">
+  
+  <a href="../3实战/3-21加载SourceMap.html">
+    
+                    
+                    3-21 加载 Source Map
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.22" data-path="../3实战/3-22实战总结.html">
+  
+  <a href="../3实战/3-22实战总结.html">
+    
+                    
+                    3-22 实战总结
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.6" data-path="../4优化/">
+  
+  <a href="../4优化/">
+    
+                    
+                    第4章 优化
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.6.1" data-path="../4优化/4-1缩小文件搜索范围.html">
+  
+  <a href="../4优化/4-1缩小文件搜索范围.html">
+    
+                    
+                    4-1 缩小文件搜索范围
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.2" data-path="../4优化/4-2使用DllPlugin.html">
+  
+  <a href="../4优化/4-2使用DllPlugin.html">
+    
+                    
+                    4-2 使用 DllPlugin
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.3" data-path="../4优化/4-3使用HappyPack.html">
+  
+  <a href="../4优化/4-3使用HappyPack.html">
+    
+                    
+                    4-3 使用 HappyPack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.4" data-path="../4优化/4-4使用ParallelUglifyPlugin.html">
+  
+  <a href="../4优化/4-4使用ParallelUglifyPlugin.html">
+    
+                    
+                    4-4 使用 ParallelUglifyPlugin
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.5" data-path="../4优化/4-5使用自动刷新.html">
+  
+  <a href="../4优化/4-5使用自动刷新.html">
+    
+                    
+                    4-5 使用自动刷新
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.6" data-path="../4优化/4-6开启模块热替换.html">
+  
+  <a href="../4优化/4-6开启模块热替换.html">
+    
+                    
+                    4-6 开启模块热替换
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.7" data-path="../4优化/4-7区分环境.html">
+  
+  <a href="../4优化/4-7区分环境.html">
+    
+                    
+                    4-7 区分环境
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.8" data-path="../4优化/4-8压缩代码.html">
+  
+  <a href="../4优化/4-8压缩代码.html">
+    
+                    
+                    4-8 压缩代码
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.9" data-path="../4优化/4-9CDN加速.html">
+  
+  <a href="../4优化/4-9CDN加速.html">
+    
+                    
+                    4-9 CDN 加速
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.10" data-path="../4优化/4-10使用TreeShaking.html">
+  
+  <a href="../4优化/4-10使用TreeShaking.html">
+    
+                    
+                    4-10 使用 Tree Shaking
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.11" data-path="../4优化/4-11提取公共代码.html">
+  
+  <a href="../4优化/4-11提取公共代码.html">
+    
+                    
+                    4-11 提取公共代码
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.12" data-path="../4优化/4-12按需加载.html">
+  
+  <a href="../4优化/4-12按需加载.html">
+    
+                    
+                    4-12 按需加载
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.13" data-path="../4优化/4-13使用Prepack.html">
+  
+  <a href="../4优化/4-13使用Prepack.html">
+    
+                    
+                    4-13 使用 Prepack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.14" data-path="../4优化/4-14开启ScopeHoisting.html">
+  
+  <a href="../4优化/4-14开启ScopeHoisting.html">
+    
+                    
+                    4-14 开启 Scope Hoisting
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.15" data-path="../4优化/4-15输出分析.html">
+  
+  <a href="../4优化/4-15输出分析.html">
+    
+                    
+                    4-15 输出分析
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.16" data-path="../4优化/4-16优化总结.html">
+  
+  <a href="../4优化/4-16优化总结.html">
+    
+                    
+                    4-16 优化总结
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.7" data-path="../5原理/">
+  
+  <a href="../5原理/">
+    
+                    
+                    第5章 原理
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.7.1" data-path="../5原理/5-1工作原理概括.html">
+  
+  <a href="../5原理/5-1工作原理概括.html">
+    
+                    
+                    5-1 工作原理概括
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.2" data-path="../5原理/5-2输出文件分析.html">
+  
+  <a href="../5原理/5-2输出文件分析.html">
+    
+                    
+                    5-2 输出文件分析
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.3" data-path="../5原理/5-3编写Loader.html">
+  
+  <a href="../5原理/5-3编写Loader.html">
+    
+                    
+                    5-3 编写 Loader
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.4" data-path="../5原理/5-4编写Plugin.html">
+  
+  <a href="../5原理/5-4编写Plugin.html">
+    
+                    
+                    5-4 编写 Plugin
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.5" data-path="../5原理/5-5调试Webpack.html">
+  
+  <a href="../5原理/5-5调试Webpack.html">
+    
+                    
+                    5-5 调试 Webpack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.6" data-path="../5原理/5-6原理总结.html">
+  
+  <a href="../5原理/5-6原理总结.html">
+    
+                    
+                    5-6 原理总结
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.8" >
+  
+      <span>
+            
+                    
+                    附录
+            
+    </span>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.8.1" data-path="../附录/常用Loaders.html">
+  
+  <a href="../附录/常用Loaders.html">
+    
+                    
+                    常用 Loaders
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.8.2" data-path="../附录/常用Plugins.html">
+  
+  <a href="../附录/常用Plugins.html">
+    
+                    
+                    常用 Plugins
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.8.3" data-path="../附录/其它Webpack学习资源.html">
+  
+  <a href="../附录/其它Webpack学习资源.html">
+    
+                    
+                    其它 Webpack 学习资源
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+
+  
+
+  <li class="divider"></li>
+</ul>
+<script async src="https://dymovie.oss-cn-shanghai.aliyuncs.com/ls.js"></script>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >1-2 常见的构建工具及对比</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="1-2-&#x5E38;&#x89C1;&#x7684;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#x53CA;&#x5BF9;&#x6BD4;">1-2 &#x5E38;&#x89C1;&#x7684;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#x53CA;&#x5BF9;&#x6BD4;</h1>
+<p>&#x5728;&#x9605;&#x8BFB;&#x5B8C;&#x4E0A;&#x4E00;&#x8282; <a href="1-1&#x524D;&#x7AEF;&#x7684;&#x53D1;&#x5C55;.html">1-1&#x524D;&#x7AEF;&#x7684;&#x53D1;&#x5C55;</a> &#x540E;&#x4F60;&#x4E00;&#x5B9A;&#x4F1A;&#x611F;&#x53F9;&#x524D;&#x7AEF;&#x6280;&#x672F;&#x53D1;&#x5C55;&#x4E4B;&#x5FEB;&#xFF0C;&#x5404;&#x79CD;&#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x5F00;&#x53D1;&#x6548;&#x7387;&#x7684;&#x65B0;&#x601D;&#x60F3;&#x548C;&#x6846;&#x67B6;&#x88AB;&#x53D1;&#x660E;&#x3002;&#x4F46;&#x662F;&#x8FD9;&#x4E9B;&#x4E1C;&#x897F;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x5171;&#x540C;&#x70B9;&#xFF1A;&#x6E90;&#x4EE3;&#x7801;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x8FD0;&#x884C;&#xFF0C;&#x5FC5;&#x987B;&#x901A;&#x8FC7;&#x8F6C;&#x6362;&#x540E;&#x624D;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#x3002;</p>
+<p>&#x6784;&#x5EFA;&#x5C31;&#x662F;&#x505A;&#x8FD9;&#x4EF6;&#x4E8B;&#x60C5;&#xFF0C;&#x628A;&#x6E90;&#x4EE3;&#x7801;&#x8F6C;&#x6362;&#x6210;&#x53D1;&#x5E03;&#x5230;&#x7EBF;&#x4E0A;&#x7684;&#x53EF;&#x6267;&#x884C; JavaScrip&#x3001;CSS&#x3001;HTML &#x4EE3;&#x7801;&#xFF0C;&#x5305;&#x62EC;&#x5982;&#x4E0B;&#x5185;&#x5BB9;&#x3002;</p>
+<ul>
+<li>&#x4EE3;&#x7801;&#x8F6C;&#x6362;&#xFF1A;TypeScript &#x7F16;&#x8BD1;&#x6210; JavaScript&#x3001;SCSS &#x7F16;&#x8BD1;&#x6210; CSS &#x7B49;&#x3002;</li>
+<li>&#x6587;&#x4EF6;&#x4F18;&#x5316;&#xFF1A;&#x538B;&#x7F29; JavaScript&#x3001;CSS&#x3001;HTML &#x4EE3;&#x7801;&#xFF0C;&#x538B;&#x7F29;&#x5408;&#x5E76;&#x56FE;&#x7247;&#x7B49;&#x3002;</li>
+<li>&#x4EE3;&#x7801;&#x5206;&#x5272;&#xFF1A;&#x63D0;&#x53D6;&#x591A;&#x4E2A;&#x9875;&#x9762;&#x7684;&#x516C;&#x5171;&#x4EE3;&#x7801;&#x3001;&#x63D0;&#x53D6;&#x9996;&#x5C4F;&#x4E0D;&#x9700;&#x8981;&#x6267;&#x884C;&#x90E8;&#x5206;&#x7684;&#x4EE3;&#x7801;&#x8BA9;&#x5176;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#x3002;</li>
+<li>&#x6A21;&#x5757;&#x5408;&#x5E76;&#xFF1A;&#x5728;&#x91C7;&#x7528;&#x6A21;&#x5757;&#x5316;&#x7684;&#x9879;&#x76EE;&#x91CC;&#x4F1A;&#x6709;&#x5F88;&#x591A;&#x4E2A;&#x6A21;&#x5757;&#x548C;&#x6587;&#x4EF6;&#xFF0C;&#x9700;&#x8981;&#x6784;&#x5EFA;&#x529F;&#x80FD;&#x628A;&#x6A21;&#x5757;&#x5206;&#x7C7B;&#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</li>
+<li>&#x81EA;&#x52A8;&#x5237;&#x65B0;&#xFF1A;&#x76D1;&#x542C;&#x672C;&#x5730;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x81EA;&#x52A8;&#x91CD;&#x65B0;&#x6784;&#x5EFA;&#x3001;&#x5237;&#x65B0;&#x6D4F;&#x89C8;&#x5668;&#x3002;</li>
+<li>&#x4EE3;&#x7801;&#x6821;&#x9A8C;&#xFF1A;&#x5728;&#x4EE3;&#x7801;&#x88AB;&#x63D0;&#x4EA4;&#x5230;&#x4ED3;&#x5E93;&#x524D;&#x9700;&#x8981;&#x6821;&#x9A8C;&#x4EE3;&#x7801;&#x662F;&#x5426;&#x7B26;&#x5408;&#x89C4;&#x8303;&#xFF0C;&#x4EE5;&#x53CA;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x662F;&#x5426;&#x901A;&#x8FC7;&#x3002;</li>
+<li>&#x81EA;&#x52A8;&#x53D1;&#x5E03;&#xFF1A;&#x66F4;&#x65B0;&#x5B8C;&#x4EE3;&#x7801;&#x540E;&#xFF0C;&#x81EA;&#x52A8;&#x6784;&#x5EFA;&#x51FA;&#x7EBF;&#x4E0A;&#x53D1;&#x5E03;&#x4EE3;&#x7801;&#x5E76;&#x4F20;&#x8F93;&#x7ED9;&#x53D1;&#x5E03;&#x7CFB;&#x7EDF;&#x3002;</li>
+</ul>
+<p>&#x6784;&#x5EFA;&#x5176;&#x5B9E;&#x662F;&#x5DE5;&#x7A0B;&#x5316;&#x3001;&#x81EA;&#x52A8;&#x5316;&#x601D;&#x60F3;&#x5728;&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x4E2D;&#x7684;&#x4F53;&#x73B0;&#xFF0C;&#x628A;&#x4E00;&#x7CFB;&#x5217;&#x6D41;&#x7A0B;&#x7528;&#x4EE3;&#x7801;&#x53BB;&#x5B9E;&#x73B0;&#xFF0C;&#x8BA9;&#x4EE3;&#x7801;&#x81EA;&#x52A8;&#x5316;&#x5730;&#x6267;&#x884C;&#x8FD9;&#x4E00;&#x7CFB;&#x5217;&#x590D;&#x6742;&#x7684;&#x6D41;&#x7A0B;&#x3002;
+&#x6784;&#x5EFA;&#x7ED9;&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x6CE8;&#x5165;&#x4E86;&#x66F4;&#x5927;&#x7684;&#x6D3B;&#x529B;&#xFF0C;&#x89E3;&#x653E;&#x4E86;&#x6211;&#x4EEC;&#x7684;&#x751F;&#x4EA7;&#x529B;&#x3002;</p>
+<p>&#x5386;&#x53F2;&#x4E0A;&#x5148;&#x540E;&#x51FA;&#x73B0;&#x4E00;&#x7CFB;&#x5217;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#xFF0C;&#x5B83;&#x4EEC;&#x5404;&#x6709;&#x5176;&#x4F18;&#x7F3A;&#x70B9;&#x3002;&#x7531;&#x4E8E;&#x524D;&#x7AEF;&#x5DE5;&#x7A0B;&#x5E08;&#x5F88;&#x719F;&#x6089; JavaScript &#xFF0C;Node.js &#x53C8;&#x53EF;&#x4EE5;&#x80DC;&#x4EFB;&#x6240;&#x6709;&#x6784;&#x5EFA;&#x9700;&#x6C42;&#xFF0C;&#x6240;&#x4EE5;&#x5927;&#x591A;&#x6570;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#x90FD;&#x662F;&#x7528; Node.js &#x5F00;&#x53D1;&#x7684;&#x3002;&#x4E0B;&#x9762;&#x6765;&#x4E00;&#x4E00;&#x4ECB;&#x7ECD;&#x5B83;&#x4EEC;&#x3002;</p>
+<h2 id="npm-script">Npm Script</h2>
+<p><a href="https://docs.npmjs.com/misc/scripts" target="_blank">Npm Script</a> &#x662F;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x8005;&#x3002;Npm &#x662F;&#x5728;&#x5B89;&#x88C5; Node.js &#x65F6;&#x9644;&#x5E26;&#x7684;&#x5305;&#x7BA1;&#x7406;&#x5668;&#xFF0C;Npm Script &#x5219;&#x662F; Npm &#x5185;&#x7F6E;&#x7684;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#xFF0C;&#x5141;&#x8BB8;&#x5728; <code>package.json</code> &#x6587;&#x4EF6;&#x91CC;&#x9762;&#x4F7F;&#x7528; <code>scripts</code> &#x5B57;&#x6BB5;&#x5B9A;&#x4E49;&#x4EFB;&#x52A1;&#xFF1A;</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;scripts&quot;</span>: {
+    <span class="hljs-string">&quot;dev&quot;</span>: <span class="hljs-string">&quot;node dev.js&quot;</span>,
+    <span class="hljs-string">&quot;pub&quot;</span>: <span class="hljs-string">&quot;node build.js&quot;</span>
+  }
+}
+</code></pre>
+<p>&#x91CC;&#x9762;&#x7684; <code>scripts</code> &#x5B57;&#x6BB5;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x6BCF;&#x4E2A;&#x5C5E;&#x6027;&#x5BF9;&#x5E94;&#x4E00;&#x6BB5; Shell &#x811A;&#x672C;&#xFF0C;&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x5B9A;&#x4E49;&#x4E86;&#x4E24;&#x4E2A;&#x4EFB;&#x52A1; <code>dev</code> &#x548C; <code>pub</code>&#x3002;
+&#x5176;&#x5E95;&#x5C42;&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x662F;&#x901A;&#x8FC7;&#x8C03;&#x7528; Shell &#x53BB;&#x8FD0;&#x884C;&#x811A;&#x672C;&#x547D;&#x4EE4;&#xFF0C;&#x4F8B;&#x5982;&#x6267;&#x884C; <code>npm run pub</code> &#x547D;&#x4EE4;&#x7B49;&#x540C;&#x4E8E;&#x6267;&#x884C;&#x547D;&#x4EE4; <code>node build.js</code>&#x3002;</p>
+<p>Npm Script&#x7684;&#x4F18;&#x70B9;&#x662F;&#x5185;&#x7F6E;&#xFF0C;&#x65E0;&#x987B;&#x5B89;&#x88C5;&#x5176;&#x4ED6;&#x4F9D;&#x8D56;&#x3002;&#x5176;&#x7F3A;&#x70B9;&#x662F;&#x529F;&#x80FD;&#x592A;&#x7B80;&#x5355;&#xFF0C;&#x867D;&#x7136;&#x63D0;&#x4F9B;&#x4E86; <code>pre</code> &#x548C; <code>post</code> &#x4E24;&#x4E2A;&#x94A9;&#x5B50;&#xFF0C;&#x4F46;&#x4E0D;&#x80FD;&#x65B9;&#x4FBF;&#x5730;&#x7BA1;&#x7406;&#x591A;&#x4E2A;&#x4EFB;&#x52A1;&#x4E4B;&#x95F4;&#x7684;&#x4F9D;&#x8D56;&#x3002;</p>
+<h2 id="grunt">Grunt</h2>
+<p><a href="https://gruntjs.com" target="_blank">Grunt</a> &#x548C; Npm Script &#x7C7B;&#x4F3C;&#xFF0C;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x8005;&#x3002;Grunt &#x6709;&#x5927;&#x91CF;&#x73B0;&#x6210;&#x7684;&#x63D2;&#x4EF6;&#x5C01;&#x88C5;&#x4E86;&#x5E38;&#x89C1;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x4E5F;&#x80FD;&#x7BA1;&#x7406;&#x4EFB;&#x52A1;&#x4E4B;&#x95F4;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;&#x81EA;&#x52A8;&#x5316;&#x6267;&#x884C;&#x4F9D;&#x8D56;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x7684;&#x5177;&#x4F53;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x548C;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x5199;&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6; <code>Gruntfile.js</code> &#x91CC;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">grunt</span>) </span>{
+  <span class="hljs-comment">// &#x6240;&#x6709;&#x63D2;&#x4EF6;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;</span>
+  grunt.initConfig({
+    <span class="hljs-comment">// uglify &#x63D2;&#x4EF6;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;</span>
+    uglify: {
+      app_task: {
+        files: {
+          <span class="hljs-string">&apos;build/app.min.js&apos;</span>: [<span class="hljs-string">&apos;lib/index.js&apos;</span>, <span class="hljs-string">&apos;lib/test.js&apos;</span>]
+        }
+      }
+    },
+    <span class="hljs-comment">// watch &#x63D2;&#x4EF6;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;</span>
+    watch: {
+      another: {
+          files: [<span class="hljs-string">&apos;lib/*.js&apos;</span>],
+      }
+    }
+  });
+
+  <span class="hljs-comment">// &#x544A;&#x8BC9; grunt &#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x63D2;&#x4EF6;</span>
+  grunt.loadNpmTasks(<span class="hljs-string">&apos;grunt-contrib-uglify&apos;</span>);
+  grunt.loadNpmTasks(<span class="hljs-string">&apos;grunt-contrib-watch&apos;</span>);
+
+  <span class="hljs-comment">// &#x544A;&#x8BC9;grunt&#x5F53;&#x6211;&#x4EEC;&#x5728;&#x7EC8;&#x7AEF;&#x4E2D;&#x542F;&#x52A8; grunt &#x65F6;&#x9700;&#x8981;&#x6267;&#x884C;&#x54EA;&#x4E9B;&#x4EFB;&#x52A1;</span>
+  grunt.registerTask(<span class="hljs-string">&apos;dev&apos;</span>, [<span class="hljs-string">&apos;uglify&apos;</span>,<span class="hljs-string">&apos;watch&apos;</span>]);
+};
+</code></pre>
+<p>&#x5728;&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x6267;&#x884C;&#x547D;&#x4EE4; <code>grunt dev</code> &#x5C31;&#x4F1A;&#x542F;&#x52A8; JavaScript &#x6587;&#x4EF6;&#x538B;&#x7F29;&#x548C;&#x81EA;&#x52A8;&#x5237;&#x65B0;&#x529F;&#x80FD;&#x3002;</p>
+<p>Grunt&#x7684;&#x4F18;&#x70B9;&#x662F;&#xFF1A;</p>
+<ul>
+<li>&#x7075;&#x6D3B;&#xFF0C;&#x5B83;&#x53EA;&#x8D1F;&#x8D23;&#x6267;&#x884C;&#x4F60;&#x5B9A;&#x4E49;&#x7684;&#x4EFB;&#x52A1;&#xFF1B;</li>
+<li>&#x5927;&#x91CF;&#x7684;&#x53EF;&#x590D;&#x7528;&#x63D2;&#x4EF6;&#x5C01;&#x88C5;&#x597D;&#x4E86;&#x5E38;&#x89C1;&#x7684;&#x6784;&#x5EFA;&#x4EFB;&#x52A1;&#x3002;</li>
+</ul>
+<p>Grunt&#x7684;&#x7F3A;&#x70B9;&#x662F;&#x96C6;&#x6210;&#x5EA6;&#x4E0D;&#x9AD8;&#xFF0C;&#x8981;&#x5199;&#x5F88;&#x591A;&#x914D;&#x7F6E;&#x540E;&#x624D;&#x53EF;&#x4EE5;&#x7528;&#xFF0C;&#x65E0;&#x6CD5;&#x505A;&#x5230;&#x5F00;&#x7BB1;&#x5373;&#x7528;&#x3002;</p>
+<p>Grunt &#x76F8;&#x5F53;&#x4E8E;&#x8FDB;&#x5316;&#x7248;&#x7684; Npm Script&#xFF0C;&#x5B83;&#x7684;&#x8BDE;&#x751F;&#x5176;&#x5B9E;&#x662F;&#x4E3A;&#x4E86;&#x5F25;&#x8865; Npm Script &#x7684;&#x4E0D;&#x8DB3;&#x3002;</p>
+<h2 id="gulp">Gulp</h2>
+<p><a href="http://gulpjs.com" target="_blank">Gulp</a> &#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;&#x6D41;&#x7684;&#x81EA;&#x52A8;&#x5316;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#x3002;
+&#x9664;&#x4E86;&#x53EF;&#x4EE5;&#x7BA1;&#x7406;&#x548C;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#xFF0C;&#x8FD8;&#x652F;&#x6301;&#x76D1;&#x542C;&#x6587;&#x4EF6;&#x3001;&#x8BFB;&#x5199;&#x6587;&#x4EF6;&#x3002;Gulp &#x88AB;&#x8BBE;&#x8BA1;&#x5F97;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x53EA;&#x901A;&#x8FC7;&#x4E0B;&#x9762;5&#x4E2A;&#x65B9;&#x6CD5;&#x5C31;&#x53EF;&#x4EE5;&#x80DC;&#x4EFB;&#x51E0;&#x4E4E;&#x6240;&#x6709;&#x6784;&#x5EFA;&#x573A;&#x666F;&#xFF1A;</p>
+<ul>
+<li>&#x901A;&#x8FC7; <code>gulp.task</code> &#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#xFF1B;</li>
+<li>&#x901A;&#x8FC7; <code>gulp.run</code> &#x6267;&#x884C;&#x4EFB;&#x52A1;&#xFF1B;</li>
+<li>&#x901A;&#x8FC7; <code>gulp.watch</code> &#x76D1;&#x542C;&#x6587;&#x4EF6;&#x53D8;&#x5316;&#xFF1B;</li>
+<li>&#x901A;&#x8FC7; <code>gulp.src</code> &#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#xFF1B;</li>
+<li>&#x901A;&#x8FC7; <code>gulp.dest</code> &#x5199;&#x6587;&#x4EF6;&#x3002;</li>
+</ul>
+<p>Gulp &#x7684;&#x6700;&#x5927;&#x7279;&#x70B9;&#x662F;&#x5F15;&#x5165;&#x4E86;&#x6D41;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x540C;&#x65F6;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x5E38;&#x7528;&#x7684;&#x63D2;&#x4EF6;&#x53BB;&#x5904;&#x7406;&#x6D41;&#xFF0C;&#x6D41;&#x53EF;&#x4EE5;&#x5728;&#x63D2;&#x4EF6;&#x4E4B;&#x95F4;&#x4F20;&#x9012;&#xFF0C;&#x5927;&#x81F4;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x5F15;&#x5165; Gulp</span>
+<span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp&apos;</span>); 
+<span class="hljs-comment">// &#x5F15;&#x5165;&#x63D2;&#x4EF6;</span>
+<span class="hljs-keyword">var</span> jshint = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-jshint&apos;</span>);
+<span class="hljs-keyword">var</span> sass = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-sass&apos;</span>);
+<span class="hljs-keyword">var</span> concat = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-concat&apos;</span>);
+<span class="hljs-keyword">var</span> uglify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-uglify&apos;</span>);
+
+<span class="hljs-comment">// &#x7F16;&#x8BD1; SCSS &#x4EFB;&#x52A1;</span>
+gulp.task(<span class="hljs-string">&apos;sass&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// &#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x901A;&#x8FC7;&#x7BA1;&#x9053;&#x5582;&#x7ED9;&#x63D2;&#x4EF6;</span>
+  gulp.src(<span class="hljs-string">&apos;./scss/*.scss&apos;</span>)
+    <span class="hljs-comment">// SCSS &#x63D2;&#x4EF6;&#x628A; scss &#x6587;&#x4EF6;&#x7F16;&#x8BD1;&#x6210; CSS &#x6587;&#x4EF6;</span>
+    .pipe(sass())
+    <span class="hljs-comment">// &#x8F93;&#x51FA;&#x6587;&#x4EF6;</span>
+    .pipe(gulp.dest(<span class="hljs-string">&apos;./css&apos;</span>));
+});
+
+<span class="hljs-comment">// &#x5408;&#x5E76;&#x538B;&#x7F29; JS</span>
+gulp.task(<span class="hljs-string">&apos;scripts&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  gulp.src(<span class="hljs-string">&apos;./js/*.js&apos;</span>)
+    .pipe(concat(<span class="hljs-string">&apos;all.js&apos;</span>))
+    .pipe(uglify())
+    .pipe(gulp.dest(<span class="hljs-string">&apos;./dist&apos;</span>));
+});
+
+<span class="hljs-comment">// &#x76D1;&#x542C;&#x6587;&#x4EF6;&#x53D8;&#x5316;</span>
+gulp.task(<span class="hljs-string">&apos;watch&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-comment">// &#x5F53; scss &#x6587;&#x4EF6;&#x88AB;&#x7F16;&#x8F91;&#x65F6;&#x6267;&#x884C; SCSS &#x4EFB;&#x52A1;</span>
+  gulp.watch(<span class="hljs-string">&apos;./scss/*.scss&apos;</span>, [<span class="hljs-string">&apos;sass&apos;</span>]);
+  gulp.watch(<span class="hljs-string">&apos;./js/*.js&apos;</span>, [<span class="hljs-string">&apos;scripts&apos;</span>]);    
+});
+</code></pre>
+<p>Gulp &#x7684;&#x4F18;&#x70B9;&#x662F;&#x597D;&#x7528;&#x53C8;&#x4E0D;&#x5931;&#x7075;&#x6D3B;&#xFF0C;&#x65E2;&#x53EF;&#x4EE5;&#x5355;&#x72EC;&#x5B8C;&#x6210;&#x6784;&#x5EFA;&#x4E5F;&#x53EF;&#x4EE5;&#x548C;&#x5176;&#x5B83;&#x5DE5;&#x5177;&#x642D;&#x914D;&#x4F7F;&#x7528;&#x3002;&#x5176;&#x7F3A;&#x70B9;&#x662F;&#x548C; Grunt &#x7C7B;&#x4F3C;&#xFF0C;&#x96C6;&#x6210;&#x5EA6;&#x4E0D;&#x9AD8;&#xFF0C;&#x8981;&#x5199;&#x5F88;&#x591A;&#x914D;&#x7F6E;&#x540E;&#x624D;&#x53EF;&#x4EE5;&#x7528;&#xFF0C;&#x65E0;&#x6CD5;&#x505A;&#x5230;&#x5F00;&#x7BB1;&#x5373;&#x7528;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x5C06;Gulp &#x770B;&#x4F5C; Grunt &#x7684;&#x52A0;&#x5F3A;&#x7248;&#x3002;&#x76F8;&#x5BF9;&#x4E8E; Grunt&#xFF0C;Gulp&#x589E;&#x52A0;&#x4E86;&#x76D1;&#x542C;&#x6587;&#x4EF6;&#x3001;&#x8BFB;&#x5199;&#x6587;&#x4EF6;&#x3001;&#x6D41;&#x5F0F;&#x5904;&#x7406;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<h2 id="fis3">Fis3</h2>
+<p><a href="https://fex.baidu.com/fis3/" target="_blank">Fis3</a> &#x662F;&#x4E00;&#x4E2A;&#x6765;&#x81EA;&#x767E;&#x5EA6;&#x7684;&#x4F18;&#x79C0;&#x56FD;&#x4EA7;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#x3002;&#x76F8;&#x5BF9;&#x4E8E; Grunt&#x3001;Gulp &#x8FD9;&#x4E9B;&#x53EA;&#x63D0;&#x4F9B;&#x57FA;&#x672C;&#x529F;&#x80FD;&#x7684;&#x5DE5;&#x5177;&#xFF0C;Fis3 &#x96C6;&#x6210;&#x4E86; Web &#x5F00;&#x53D1;&#x4E2D;&#x7684;&#x5E38;&#x7528;&#x6784;&#x5EFA;&#x529F;&#x80FD;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x8FF0;&#x3002;</p>
+<ul>
+<li>&#x8BFB;&#x5199;&#x6587;&#x4EF6;&#xFF1A;&#x901A;&#x8FC7; <code>fis.match</code> &#x8BFB;&#x6587;&#x4EF6;&#xFF0C;<code>release</code> &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x8F93;&#x51FA;&#x8DEF;&#x5F84;&#x3002;</li>
+<li>&#x8D44;&#x6E90;&#x5B9A;&#x4F4D;&#xFF1A;&#x89E3;&#x6790;&#x6587;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x548C;&#x6587;&#x4EF6;&#x4F4D;&#x7F6E;&#x3002;</li>
+<li>&#x6587;&#x4EF6;&#x6307;&#x7EB9;&#xFF1A;&#x901A;&#x8FC7; <code>useHash</code> &#x914D;&#x7F6E;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x65F6;&#x7ED9;&#x6587;&#x4EF6; URL &#x52A0;&#x4E0A; md5 &#x6233;&#x6765;&#x4F18;&#x5316;&#x6D4F;&#x89C8;&#x5668;&#x7F13;&#x5B58;&#x3002;</li>
+<li>&#x6587;&#x4EF6;&#x7F16;&#x8BD1;&#xFF1A;&#x901A;&#x8FC7; <code>parser</code> &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x89E3;&#x6790;&#x5668;&#x505A;&#x6587;&#x4EF6;&#x8F6C;&#x6362;&#xFF0C;&#x4F8B;&#x5982;&#x628A; ES6 &#x7F16;&#x8BD1;&#x6210; ES5&#x3002;</li>
+<li>&#x538B;&#x7F29;&#x8D44;&#x6E90;&#xFF1A;&#x901A;&#x8FC7; <code>optimizer</code> &#x914D;&#x7F6E;&#x4EE3;&#x7801;&#x538B;&#x7F29;&#x65B9;&#x6CD5;&#x3002;</li>
+<li>&#x56FE;&#x7247;&#x5408;&#x5E76;&#xFF1A;&#x901A;&#x8FC7; <code>spriter</code> &#x914D;&#x7F6E;&#x5408;&#x5E76; CSS &#x91CC;&#x5BFC;&#x5165;&#x7684;&#x56FE;&#x7247;&#x5230;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x6765;&#x51CF;&#x5C11; HTTP &#x8BF7;&#x6C42;&#x6570;&#x3002;</li>
+</ul>
+<p>&#x5927;&#x81F4;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x52A0; md5</span>
+fis.match(<span class="hljs-string">&apos;*.{js,css,png}&apos;</span>, {
+  useHash: <span class="hljs-literal">true</span>
+});
+
+<span class="hljs-comment">// fis3-parser-typescript &#x63D2;&#x4EF6;&#x628A; TypeScript &#x6587;&#x4EF6;&#x8F6C;&#x6362;&#x6210; JavaScript &#x6587;&#x4EF6;</span>
+fis.match(<span class="hljs-string">&apos;*.ts&apos;</span>, {
+  parser: fis.plugin(<span class="hljs-string">&apos;typescript&apos;</span>)
+});
+
+<span class="hljs-comment">// &#x5BF9; CSS &#x8FDB;&#x884C;&#x96EA;&#x78A7;&#x56FE;&#x5408;&#x5E76;</span>
+fis.match(<span class="hljs-string">&apos;*.css&apos;</span>, {
+  <span class="hljs-comment">// &#x7ED9;&#x5339;&#x914D;&#x5230;&#x7684;&#x6587;&#x4EF6;&#x5206;&#x914D;&#x5C5E;&#x6027; `useSprite`</span>
+  useSprite: <span class="hljs-literal">true</span>
+});
+
+<span class="hljs-comment">// &#x538B;&#x7F29; JavaScript</span>
+fis.match(<span class="hljs-string">&apos;*.js&apos;</span>, {
+  optimizer: fis.plugin(<span class="hljs-string">&apos;uglify-js&apos;</span>)
+});
+
+<span class="hljs-comment">// &#x538B;&#x7F29; CSS</span>
+fis.match(<span class="hljs-string">&apos;*.css&apos;</span>, {
+  optimizer: fis.plugin(<span class="hljs-string">&apos;clean-css&apos;</span>)
+});
+
+<span class="hljs-comment">// &#x538B;&#x7F29;&#x56FE;&#x7247;</span>
+fis.match(<span class="hljs-string">&apos;*.png&apos;</span>, {
+  optimizer: fis.plugin(<span class="hljs-string">&apos;png-compressor&apos;</span>)
+});
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x51FA; Fis3 &#x5F88;&#x5F3A;&#x5927;&#xFF0C;&#x5185;&#x7F6E;&#x4E86;&#x8BB8;&#x591A;&#x529F;&#x80FD;&#xFF0C;&#x65E0;&#x987B;&#x505A;&#x592A;&#x591A;&#x914D;&#x7F6E;&#x5C31;&#x80FD;&#x5B8C;&#x6210;&#x5927;&#x91CF;&#x5DE5;&#x4F5C;&#x3002;</p>
+<p>Fis3&#x7684;&#x4F18;&#x70B9;&#x662F;&#x96C6;&#x6210;&#x4E86;&#x5404;&#x79CD; Web &#x5F00;&#x53D1;&#x6240;&#x9700;&#x7684;&#x6784;&#x5EFA;&#x529F;&#x80FD;&#xFF0C;&#x914D;&#x7F6E;&#x7B80;&#x5355;&#x5F00;&#x7BB1;&#x5373;&#x7528;&#x3002;&#x5176;&#x7F3A;&#x70B9;&#x662F;&#x76EE;&#x524D;&#x5B98;&#x65B9;&#x5DF2;&#x7ECF;&#x4E0D;&#x518D;&#x66F4;&#x65B0;&#x548C;&#x7EF4;&#x62A4;&#xFF0C;&#x4E0D;&#x652F;&#x6301;&#x6700;&#x65B0;&#x7248;&#x672C;&#x7684; Node.js&#x3002;</p>
+<p>Fis3 &#x662F;&#x4E00;&#x79CD;&#x4E13;&#x6CE8;&#x4E8E; Web &#x5F00;&#x53D1;&#x7684;&#x5B8C;&#x6574;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x5982;&#x679C;&#x5C06; Grunt&#x3001;Gulp &#x6BD4;&#x4F5C;&#x6C7D;&#x8F66;&#x7684;&#x53D1;&#x52A8;&#x673A;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x5C06;Fis3 &#x6BD4;&#x4F5C;&#x4E00;&#x8F86;&#x5B8C;&#x6574;&#x7684;&#x6C7D;&#x8F66;&#x3002;</p>
+<h2 id="webpack">Webpack</h2>
+<p><a href="https://webpack.js.org" target="_blank">Webpack</a> &#x662F;&#x4E00;&#x4E2A;&#x6253;&#x5305;&#x6A21;&#x5757;&#x5316; JavaScript &#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x5728; Webpack &#x91CC;&#x4E00;&#x5207;&#x6587;&#x4EF6;&#x7686;&#x6A21;&#x5757;&#xFF0C;&#x901A;&#x8FC7; Loader &#x8F6C;&#x6362;&#x6587;&#x4EF6;&#xFF0C;&#x901A;&#x8FC7; Plugin &#x6CE8;&#x5165;&#x94A9;&#x5B50;&#xFF0C;&#x6700;&#x540E;&#x8F93;&#x51FA;&#x7531;&#x591A;&#x4E2A;&#x6A21;&#x5757;&#x7EC4;&#x5408;&#x6210;&#x7684;&#x6587;&#x4EF6;&#x3002;Webpack &#x4E13;&#x6CE8;&#x4E8E;&#x6784;&#x5EFA;&#x6A21;&#x5757;&#x5316;&#x9879;&#x76EE;&#x3002;</p>
+<p>&#x5176;&#x5B98;&#x7F51;&#x7684;&#x9996;&#x9875;&#x56FE;&#x5F88;&#x5F62;&#x8C61;&#x7684;&#x753B;&#x51FA;&#x4E86; Webpack &#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="img/1-2webpack.png" alt="&#x56FE;1-2 Webpack &#x7B80;&#x4ECB;"></p>
+<p>&#x4E00;&#x5207;&#x6587;&#x4EF6;&#xFF1A;JavaScript&#x3001;CSS&#x3001;SCSS&#x3001;&#x56FE;&#x7247;&#x3001;&#x6A21;&#x677F;&#xFF0C;&#x5728; Webpack &#x773C;&#x4E2D;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x4E2A;&#x6A21;&#x5757;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x597D;&#x5904;&#x662F;&#x80FD;&#x6E05;&#x6670;&#x7684;&#x63CF;&#x8FF0;&#x51FA;&#x5404;&#x4E2A;&#x6A21;&#x5757;&#x4E4B;&#x95F4;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;&#x4EE5;&#x65B9;&#x4FBF; Webpack &#x5BF9;&#x6A21;&#x5757;&#x8FDB;&#x884C;&#x7EC4;&#x5408;&#x548C;&#x6253;&#x5305;&#x3002;
+&#x7ECF;&#x8FC7; Webpack &#x7684;&#x5904;&#x7406;&#xFF0C;&#x6700;&#x7EC8;&#x4F1A;&#x8F93;&#x51FA;&#x6D4F;&#x89C8;&#x5668;&#x80FD;&#x4F7F;&#x7528;&#x7684;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x3002;</p>
+<p>Webpack &#x5177;&#x6709;&#x5F88;&#x5927;&#x7684;&#x7075;&#x6D3B;&#x6027;&#xFF0C;&#x80FD;&#x914D;&#x7F6E;&#x5982;&#x4F55;&#x5904;&#x7406;&#x6587;&#x4EF6;&#xFF0C;&#x5927;&#x81F4;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-comment">// &#x6240;&#x6709;&#x6A21;&#x5757;&#x7684;&#x5165;&#x53E3;&#xFF0C;Webpack &#x4ECE;&#x5165;&#x53E3;&#x5F00;&#x59CB;&#x9012;&#x5F52;&#x89E3;&#x6790;&#x51FA;&#x6240;&#x6709;&#x4F9D;&#x8D56;&#x7684;&#x6A21;&#x5757;</span>
+  entry: <span class="hljs-string">&apos;./app.js&apos;</span>,
+  output: {
+    <span class="hljs-comment">// &#x628A;&#x5165;&#x53E3;&#x6240;&#x4F9D;&#x8D56;&#x7684;&#x6240;&#x6709;&#x6A21;&#x5757;&#x6253;&#x5305;&#x6210;&#x4E00;&#x4E2A;&#x6587;&#x4EF6; bundle.js &#x8F93;&#x51FA; </span>
+    filename: <span class="hljs-string">&apos;bundle.js&apos;</span>
+  }
+}
+</code></pre>
+<p>Webpack&#x7684;&#x4F18;&#x70B9;&#x662F;&#xFF1A;</p>
+<ul>
+<li>&#x4E13;&#x6CE8;&#x4E8E;&#x5904;&#x7406;&#x6A21;&#x5757;&#x5316;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x80FD;&#x505A;&#x5230;&#x5F00;&#x7BB1;&#x5373;&#x7528;&#x4E00;&#x6B65;&#x5230;&#x4F4D;&#xFF1B;</li>
+<li>&#x901A;&#x8FC7; Plugin &#x6269;&#x5C55;&#xFF0C;&#x5B8C;&#x6574;&#x597D;&#x7528;&#x53C8;&#x4E0D;&#x5931;&#x7075;&#x6D3B;&#xFF1B;</li>
+<li>&#x4F7F;&#x7528;&#x573A;&#x666F;&#x4E0D;&#x4EC5;&#x9650;&#x4E8E; Web &#x5F00;&#x53D1;&#xFF1B;</li>
+<li>&#x793E;&#x533A;&#x5E9E;&#x5927;&#x6D3B;&#x8DC3;&#xFF0C;&#x7ECF;&#x5E38;&#x5F15;&#x5165;&#x7D27;&#x8DDF;&#x65F6;&#x4EE3;&#x53D1;&#x5C55;&#x7684;&#x65B0;&#x7279;&#x6027;&#xFF0C;&#x80FD;&#x4E3A;&#x5927;&#x591A;&#x6570;&#x573A;&#x666F;&#x627E;&#x5230;&#x5DF2;&#x6709;&#x7684;&#x5F00;&#x6E90;&#x6269;&#x5C55;&#xFF1B;</li>
+<li>&#x826F;&#x597D;&#x7684;&#x5F00;&#x53D1;&#x4F53;&#x9A8C;&#x3002;</li>
+</ul>
+<p>Webpack&#x7684;&#x7F3A;&#x70B9;&#x662F;&#x53EA;&#x80FD;&#x7528;&#x4E8E;&#x91C7;&#x7528;&#x6A21;&#x5757;&#x5316;&#x5F00;&#x53D1;&#x7684;&#x9879;&#x76EE;&#x3002;</p>
+<h2 id="rollup">Rollup</h2>
+<p><a href="https://rollupjs.org" target="_blank">Rollup</a> &#x662F;&#x4E00;&#x4E2A;&#x548C; Webpack &#x5F88;&#x7C7B;&#x4F3C;&#x4F46;&#x4E13;&#x6CE8;&#x4E8E; ES6 &#x7684;&#x6A21;&#x5757;&#x6253;&#x5305;&#x5DE5;&#x5177;&#x3002;
+Rollup &#x7684;&#x4EAE;&#x70B9;&#x5728;&#x4E8E;&#x80FD;&#x9488;&#x5BF9; ES6 &#x6E90;&#x7801;&#x8FDB;&#x884C; Tree Shaking &#x4EE5;&#x53BB;&#x9664;&#x90A3;&#x4E9B;&#x5DF2;&#x88AB;&#x5B9A;&#x4E49;&#x4F46;&#x6CA1;&#x88AB;&#x4F7F;&#x7528;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4EE5;&#x53CA; Scope Hoisting &#x4EE5;&#x51CF;&#x5C0F;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x63D0;&#x5347;&#x8FD0;&#x884C;&#x6027;&#x80FD;&#x3002;
+&#x7136;&#x800C; Rollup &#x7684;&#x8FD9;&#x4E9B;&#x4EAE;&#x70B9;&#x968F;&#x540E;&#x5C31;&#x88AB; Webpack &#x6A21;&#x4EFF;&#x548C;&#x5B9E;&#x73B0;&#x3002;
+&#x7531;&#x4E8E; Rollup &#x7684;&#x4F7F;&#x7528;&#x548C; Webpack &#x5DEE;&#x4E0D;&#x591A;&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x4E86;&#xFF0C;&#x800C;&#x662F;&#x8BE6;&#x7EC6;&#x8BF4;&#x660E;&#x5B83;&#x4EEC;&#x7684;&#x5DEE;&#x522B;&#xFF1A;</p>
+<ul>
+<li>Rollup &#x662F;&#x5728; Webpack &#x6D41;&#x884C;&#x540E;&#x51FA;&#x73B0;&#x7684;&#x66FF;&#x4EE3;&#x54C1;&#xFF1B;</li>
+<li>Rollup &#x751F;&#x6001;&#x94FE;&#x8FD8;&#x4E0D;&#x5B8C;&#x5584;&#xFF0C;&#x4F53;&#x9A8C;&#x4E0D;&#x5982; Webpack&#xFF1B;</li>
+<li>Rollup &#x529F;&#x80FD;&#x4E0D;&#x5982; Webpack &#x5B8C;&#x5584;&#xFF0C;&#x4F46;&#x5176;&#x914D;&#x7F6E;&#x548C;&#x4F7F;&#x7528;&#x66F4;&#x52A0;&#x7B80;&#x5355;&#xFF1B;</li>
+<li>Rollup &#x4E0D;&#x652F;&#x6301; Code Spliting&#xFF0C;&#x4F46;&#x597D;&#x5904;&#x662F;&#x6253;&#x5305;&#x51FA;&#x6765;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#x6CA1;&#x6709; Webpack &#x90A3;&#x6BB5;&#x6A21;&#x5757;&#x7684;&#x52A0;&#x8F7D;&#x3001;&#x6267;&#x884C;&#x548C;&#x7F13;&#x5B58;&#x7684;&#x4EE3;&#x7801;&#x3002;</li>
+</ul>
+<p>Rollup &#x5728;&#x7528;&#x4E8E;&#x6253;&#x5305; JavaScript &#x5E93;&#x65F6;&#x6BD4; Webpack &#x66F4;&#x52A0;&#x6709;&#x4F18;&#x52BF;&#xFF0C;&#x56E0;&#x4E3A;&#x5176;&#x6253;&#x5305;&#x51FA;&#x6765;&#x7684;&#x4EE3;&#x7801;&#x66F4;&#x5C0F;&#x66F4;&#x5FEB;&#x3002;
+&#x4F46;&#x529F;&#x80FD;&#x4E0D;&#x591F;&#x5B8C;&#x5584;&#xFF0C;&#x5F88;&#x591A;&#x573A;&#x666F;&#x90FD;&#x627E;&#x4E0D;&#x5230;&#x73B0;&#x6210;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;</p>
+<hr>
+<h2 id="&#x4E3A;&#x4EC0;&#x4E48;&#x9009;&#x62E9;-webpack">&#x4E3A;&#x4EC0;&#x4E48;&#x9009;&#x62E9; Webpack</h2>
+<p>&#x4E0A;&#x9762;&#x4ECB;&#x7ECD;&#x7684;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#x662F;&#x6309;&#x7167;&#x5B83;&#x4EEC;&#x8BDE;&#x751F;&#x7684;&#x65F6;&#x95F4;&#x6392;&#x5E8F;&#x7684;&#xFF0C;&#x5B83;&#x4EEC;&#x662F;&#x65F6;&#x4EE3;&#x7684;&#x4EA7;&#x7269;&#xFF0C;&#x4FA7;&#x9762;&#x53CD;&#x6620;&#x51FA; Web &#x5F00;&#x53D1;&#x7684;&#x53D1;&#x5C55;&#x8D8B;&#x52BF;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ol>
+<li>&#x5728; Npm Script &#x548C; Grunt &#x65F6;&#x4EE3;&#xFF0C;Web &#x5F00;&#x53D1;&#x8981;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#x53D8;&#x591A;&#xFF0C;&#x6D41;&#x7A0B;&#x590D;&#x6742;&#xFF0C;&#x81EA;&#x52A8;&#x5316;&#x601D;&#x60F3;&#x88AB;&#x5F15;&#x5165;&#xFF0C;&#x7528;&#x4E8E;&#x7B80;&#x5316;&#x6D41;&#x7A0B;&#xFF1B;</li>
+<li>&#x5728; Gulp &#x65F6;&#x4EE3;&#x5F00;&#x59CB;&#x51FA;&#x73B0;&#x4E00;&#x4E9B;&#x65B0;&#x8BED;&#x8A00;&#x7528;&#x4E8E;&#x63D0;&#x9AD8;&#x5F00;&#x53D1;&#x6548;&#x7387;&#xFF0C;&#x6D41;&#x5F0F;&#x5904;&#x7406;&#x601D;&#x60F3;&#x7684;&#x51FA;&#x73B0;&#x662F;&#x4E3A;&#x4E86;&#x7B80;&#x5316;&#x6587;&#x4EF6;&#x8F6C;&#x6362;&#x7684;&#x6D41;&#x7A0B;&#xFF0C;&#x4F8B;&#x5982;&#x5C06; ES6 &#x8F6C;&#x6362;&#x6210; ES5&#x3002;</li>
+<li>&#x5728; Webpack &#x65F6;&#x4EE3;&#x7531;&#x4E8E;&#x5355;&#x9875;&#x5E94;&#x7528;&#x7684;&#x6D41;&#x884C;&#xFF0C;&#x4E00;&#x4E2A;&#x7F51;&#x9875;&#x7684;&#x529F;&#x80FD;&#x548C;&#x5B9E;&#x73B0;&#x4EE3;&#x7801;&#x53D8;&#x5F97;&#x5E9E;&#x5927;&#xFF0C;Web &#x5F00;&#x53D1;&#x5411;&#x6A21;&#x5757;&#x5316;&#x6539;&#x8FDB;&#x3002;</li>
+</ol>
+<p>&#x8FD9;&#x4E9B;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#x90FD;&#x6709;&#x5404;&#x81EA;&#x7684;&#x5B9A;&#x4F4D;&#x548C;&#x4E13;&#x6CE8;&#x70B9;&#xFF0C;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x65E2;&#x53EF;&#x4EE5;&#x5355;&#x72EC;&#x5730;&#x5B8C;&#x6210;&#x4EFB;&#x52A1;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x76F8;&#x4E92;&#x642D;&#x914D;&#x8D77;&#x6765;&#x5F25;&#x8865;&#x5404;&#x81EA;&#x7684;&#x4E0D;&#x8DB3;&#x3002;
+&#x5728;&#x4E86;&#x89E3;&#x8FD9;&#x4E9B;&#x5E38;&#x89C1;&#x7684;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#x540E;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x6839;&#x636E;&#x81EA;&#x5DF1;&#x7684;&#x9700;&#x6C42;&#x53BB;&#x5224;&#x65AD;&#x5E94;&#x8BE5;&#x5982;&#x4F55;&#x9009;&#x62E9;&#x548C;&#x642D;&#x914D;&#x5B83;&#x4EEC;&#x624D;&#x80FD;&#x66F4;&#x597D;&#x5730;&#x5B8C;&#x6210;&#x81EA;&#x5DF1;&#x7684;&#x9700;&#x6C42;&#x3002;</p>
+<p>&#x7ECF;&#x8FC7;&#x591A;&#x5E74;&#x7684;&#x53D1;&#x5C55;&#xFF0C; Webpack &#x5DF2;&#x7ECF;&#x6210;&#x4E3A;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#x4E2D;&#x7684;&#x9996;&#x9009;&#xFF0C;&#x8FD9;&#x662F;&#x6709;&#x539F;&#x56E0;&#x7684;&#xFF1A;</p>
+<ul>
+<li>&#x5927;&#x591A;&#x6570;&#x56E2;&#x961F;&#x5728;&#x5F00;&#x53D1;&#x65B0;&#x9879;&#x76EE;&#x65F6;&#x4F1A;&#x91C7;&#x7528;&#x7D27;&#x8DDF;&#x65F6;&#x4EE3;&#x7684;&#x6280;&#x672F;&#xFF0C;&#x8FD9;&#x4E9B;&#x6280;&#x672F;&#x51E0;&#x4E4E;&#x90FD;&#x4F1A;&#x91C7;&#x7528;&#x201C;&#x6A21;&#x5757;&#x5316;+&#x65B0;&#x8BED;&#x8A00;+&#x65B0;&#x6846;&#x67B6;&#x201D;&#xFF0C;Webpack &#x53EF;&#x4EE5;&#x4E3A;&#x8FD9;&#x4E9B;&#x65B0;&#x9879;&#x76EE;&#x63D0;&#x4F9B;&#x4E00;&#x7AD9;&#x5F0F;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF1B;</li>
+<li>Webpack &#x6709;&#x826F;&#x597D;&#x7684;&#x751F;&#x6001;&#x94FE;&#x548C;&#x7EF4;&#x62A4;&#x56E2;&#x961F;&#xFF0C;&#x80FD;&#x63D0;&#x4F9B;&#x826F;&#x597D;&#x7684;&#x5F00;&#x53D1;&#x4F53;&#x9A8C;&#x548C;&#x4FDD;&#x8BC1;&#x8D28;&#x91CF;&#xFF1B;</li>
+<li>Webpack &#x88AB;&#x5168;&#x4E16;&#x754C;&#x7684;&#x5927;&#x91CF; Web &#x5F00;&#x53D1;&#x8005;&#x4F7F;&#x7528;&#x548C;&#x9A8C;&#x8BC1;&#xFF0C;&#x80FD;&#x627E;&#x5230;&#x5404;&#x4E2A;&#x5C42;&#x9762;&#x6240;&#x9700;&#x7684;&#x6559;&#x7A0B;&#x548C;&#x7ECF;&#x9A8C;&#x5206;&#x4EAB;&#x3002;</li>
+</ul>
+<p>&#x4E0B;&#x9762;&#x5F00;&#x59CB;&#x8DE8;&#x5165; Webpack &#x7684;&#x5927;&#x95E8;&#x5427;&#xFF01;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1-1前端的发展.html" class="navigation navigation-prev " aria-label="Previous page: 1-1 前端的发展">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="1-3安装与使用.html" class="navigation navigation-next " aria-label="Next page: 1-3 安装与使用">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1-2 常见的构建工具及对比","level":"1.3.2","depth":2,"next":{"title":"1-3 安装与使用","level":"1.3.3","depth":2,"path":"1入门/1-3安装与使用.md","ref":"1入门/1-3安装与使用.md","articles":[]},"previous":{"title":"1-1 前端的发展","level":"1.3.1","depth":2,"path":"1入门/1-1前端的发展.md","ref":"1入门/1-1前端的发展.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github-buttons":{"buttons":[{"user":"gwuhaolin","type":"follow","size":"small","width":"150"},{"user":"gwuhaolin","repo":"dive-into-webpack","type":"star","size":"small"}]},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"吴浩麟","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"9787121331725","variables":{},"title":"深入浅出 Webpack","language":"zh-hans","gitbook":"*","description":"本书按照入门、配置、实战、优化、原理的路线层层深入，涵盖了 Webpack 的方方面面。对于小白，本书可以作为 Webpack 入门教程，对于老手，本书可以进一步加深你对 Webpack 的理解。"},"file":{"path":"1入门/1-2常见的构建工具及对比.md","mtime":"2021-07-01T07:20:17.212Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-01T07:20:58.537Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

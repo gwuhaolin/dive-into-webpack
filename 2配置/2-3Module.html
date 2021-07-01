@@ -1,0 +1,1314 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2-3 Module · 深入浅出 Webpack</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="吴浩麟">
+        <meta name="identifier" content="9787121331725" scheme="ISBN">
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2-4Resolve.html" />
+    
+    
+    <link rel="prev" href="2-2Output.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"gwuhaolin","type":"follow","size":"small","width":"150"},{"user":"gwuhaolin","repo":"dive-into-webpack","type":"star","size":"small"}]};
+    </script>
+
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+  
+  
+
+  
+
+  
+  
+  
+
+<li class="chapter " data-level="1.1" data-path="../">
+  
+  <a href="../">
+    
+                    
+                    深入浅出 Webpack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.2" data-path="../前言.html">
+  
+  <a href="../前言.html">
+    
+                    
+                    前言
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3" data-path="../1入门/">
+  
+  <a href="../1入门/">
+    
+                    
+                    第1章 入门
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.3.1" data-path="../1入门/1-1前端的发展.html">
+  
+  <a href="../1入门/1-1前端的发展.html">
+    
+                    
+                    1-1 前端的发展
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.2" data-path="../1入门/1-2常见的构建工具及对比.html">
+  
+  <a href="../1入门/1-2常见的构建工具及对比.html">
+    
+                    
+                    1-2 常见的构建工具及对比
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.3" data-path="../1入门/1-3安装与使用.html">
+  
+  <a href="../1入门/1-3安装与使用.html">
+    
+                    
+                    1-3 安装与使用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.4" data-path="../1入门/1-4使用Loader.html">
+  
+  <a href="../1入门/1-4使用Loader.html">
+    
+                    
+                    1-4 使用 Loader
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.5" data-path="../1入门/1-5使用Plugin.html">
+  
+  <a href="../1入门/1-5使用Plugin.html">
+    
+                    
+                    1-5 使用 Plugin
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.6" data-path="../1入门/1-6使用DevServer.html">
+  
+  <a href="../1入门/1-6使用DevServer.html">
+    
+                    
+                    1-6 使用 DevServer
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.7" data-path="../1入门/1-7核心概念.html">
+  
+  <a href="../1入门/1-7核心概念.html">
+    
+                    
+                    1-7 核心概念
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.4" data-path="./">
+  
+  <a href="./">
+    
+                    
+                    第2章 配置
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.4.1" data-path="2-1Entry.html">
+  
+  <a href="2-1Entry.html">
+    
+                    
+                    2-1 Entry
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.2" data-path="2-2Output.html">
+  
+  <a href="2-2Output.html">
+    
+                    
+                    2-2 Output
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter active" data-level="1.4.3" data-path="2-3Module.html">
+  
+  <a href="2-3Module.html">
+    
+                    
+                    2-3 Module
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.4" data-path="2-4Resolve.html">
+  
+  <a href="2-4Resolve.html">
+    
+                    
+                    2-4 Resolve
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.5" data-path="2-5Plugins.html">
+  
+  <a href="2-5Plugins.html">
+    
+                    
+                    2-5 Plugins
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.6" data-path="2-6DevServer.html">
+  
+  <a href="2-6DevServer.html">
+    
+                    
+                    2-6 DevServer
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.7" data-path="2-7其它配置项.html">
+  
+  <a href="2-7其它配置项.html">
+    
+                    
+                    2-7 其它配置项
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.8" data-path="2-8整体配置结构.html">
+  
+  <a href="2-8整体配置结构.html">
+    
+                    
+                    2-8 整体配置结构
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.9" data-path="2-9多种配置类型.html">
+  
+  <a href="2-9多种配置类型.html">
+    
+                    
+                    2-9 多种配置类型
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.10" data-path="2-10配置总结.html">
+  
+  <a href="2-10配置总结.html">
+    
+                    
+                    2-10 配置总结
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.5" data-path="../3实战/">
+  
+  <a href="../3实战/">
+    
+                    
+                    第3章 实战
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.5.1" data-path="../3实战/3-1使用ES6语言.html">
+  
+  <a href="../3实战/3-1使用ES6语言.html">
+    
+                    
+                    3-1 使用 ES6 语言
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.2" data-path="../3实战/3-2使用TypeScript语言.html">
+  
+  <a href="../3实战/3-2使用TypeScript语言.html">
+    
+                    
+                    3-2 使用 TypeScript 语言
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.3" data-path="../3实战/3-3使用Flow检查器.html">
+  
+  <a href="../3实战/3-3使用Flow检查器.html">
+    
+                    
+                    3-3 使用 Flow 检查器
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.4" data-path="../3实战/3-4使用SCSS语言.html">
+  
+  <a href="../3实战/3-4使用SCSS语言.html">
+    
+                    
+                    3-4 使用 SCSS
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.5" data-path="../3实战/3-5使用PostCSS.html">
+  
+  <a href="../3实战/3-5使用PostCSS.html">
+    
+                    
+                    3-5 使用 PostCSS
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.6" data-path="../3实战/3-6使用React框架.html">
+  
+  <a href="../3实战/3-6使用React框架.html">
+    
+                    
+                    3-6 使用 React 框架
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.7" data-path="../3实战/3-7使用Vue框架.html">
+  
+  <a href="../3实战/3-7使用Vue框架.html">
+    
+                    
+                    3-7 使用 Vue 框架
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.8" data-path="../3实战/3-8使用Angular2框架.html">
+  
+  <a href="../3实战/3-8使用Angular2框架.html">
+    
+                    
+                    3-8 使用 Angular2 框架
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.9" data-path="../3实战/3-9为单页应用生成HTML.html">
+  
+  <a href="../3实战/3-9为单页应用生成HTML.html">
+    
+                    
+                    3-9 为单页应用生成 HTML
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.10" data-path="../3实战/3-10管理多个单页应用.html">
+  
+  <a href="../3实战/3-10管理多个单页应用.html">
+    
+                    
+                    3-10 管理多个单页应用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.11" data-path="../3实战/3-11构建同构应用.html">
+  
+  <a href="../3实战/3-11构建同构应用.html">
+    
+                    
+                    3-11 构建同构应用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.12" data-path="../3实战/3-12构建Electron应用.html">
+  
+  <a href="../3实战/3-12构建Electron应用.html">
+    
+                    
+                    3-12 构建 Electron 应用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.13" data-path="../3实战/3-13构建Npm模块.html">
+  
+  <a href="../3实战/3-13构建Npm模块.html">
+    
+                    
+                    3-13 构建 Npm 模块
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.14" data-path="../3实战/3-14构建离线应用.html">
+  
+  <a href="../3实战/3-14构建离线应用.html">
+    
+                    
+                    3-14 构建离线应用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.15" data-path="../3实战/3-15搭配NpmScript.html">
+  
+  <a href="../3实战/3-15搭配NpmScript.html">
+    
+                    
+                    3-15 搭配 Npm Script
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.16" data-path="../3实战/3-16检查代码.html">
+  
+  <a href="../3实战/3-16检查代码.html">
+    
+                    
+                    3-16 检查代码
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.17" data-path="../3实战/3-17通过Node.jsAPI启动Webpack.html">
+  
+  <a href="../3实战/3-17通过Node.jsAPI启动Webpack.html">
+    
+                    
+                    3-17 通过 Node.js API 启动 Webpack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.18" data-path="../3实战/3-18使用WebpackDevMiddleware.html">
+  
+  <a href="../3实战/3-18使用WebpackDevMiddleware.html">
+    
+                    
+                    3-18 使用 Webpack Dev Middleware
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.19" data-path="../3实战/3-19加载图片.html">
+  
+  <a href="../3实战/3-19加载图片.html">
+    
+                    
+                    3-19 加载图片
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.20" data-path="../3实战/3-20加载SVG.html">
+  
+  <a href="../3实战/3-20加载SVG.html">
+    
+                    
+                    3-20 加载SVG
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.21" data-path="../3实战/3-21加载SourceMap.html">
+  
+  <a href="../3实战/3-21加载SourceMap.html">
+    
+                    
+                    3-21 加载 Source Map
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.22" data-path="../3实战/3-22实战总结.html">
+  
+  <a href="../3实战/3-22实战总结.html">
+    
+                    
+                    3-22 实战总结
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.6" data-path="../4优化/">
+  
+  <a href="../4优化/">
+    
+                    
+                    第4章 优化
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.6.1" data-path="../4优化/4-1缩小文件搜索范围.html">
+  
+  <a href="../4优化/4-1缩小文件搜索范围.html">
+    
+                    
+                    4-1 缩小文件搜索范围
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.2" data-path="../4优化/4-2使用DllPlugin.html">
+  
+  <a href="../4优化/4-2使用DllPlugin.html">
+    
+                    
+                    4-2 使用 DllPlugin
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.3" data-path="../4优化/4-3使用HappyPack.html">
+  
+  <a href="../4优化/4-3使用HappyPack.html">
+    
+                    
+                    4-3 使用 HappyPack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.4" data-path="../4优化/4-4使用ParallelUglifyPlugin.html">
+  
+  <a href="../4优化/4-4使用ParallelUglifyPlugin.html">
+    
+                    
+                    4-4 使用 ParallelUglifyPlugin
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.5" data-path="../4优化/4-5使用自动刷新.html">
+  
+  <a href="../4优化/4-5使用自动刷新.html">
+    
+                    
+                    4-5 使用自动刷新
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.6" data-path="../4优化/4-6开启模块热替换.html">
+  
+  <a href="../4优化/4-6开启模块热替换.html">
+    
+                    
+                    4-6 开启模块热替换
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.7" data-path="../4优化/4-7区分环境.html">
+  
+  <a href="../4优化/4-7区分环境.html">
+    
+                    
+                    4-7 区分环境
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.8" data-path="../4优化/4-8压缩代码.html">
+  
+  <a href="../4优化/4-8压缩代码.html">
+    
+                    
+                    4-8 压缩代码
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.9" data-path="../4优化/4-9CDN加速.html">
+  
+  <a href="../4优化/4-9CDN加速.html">
+    
+                    
+                    4-9 CDN 加速
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.10" data-path="../4优化/4-10使用TreeShaking.html">
+  
+  <a href="../4优化/4-10使用TreeShaking.html">
+    
+                    
+                    4-10 使用 Tree Shaking
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.11" data-path="../4优化/4-11提取公共代码.html">
+  
+  <a href="../4优化/4-11提取公共代码.html">
+    
+                    
+                    4-11 提取公共代码
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.12" data-path="../4优化/4-12按需加载.html">
+  
+  <a href="../4优化/4-12按需加载.html">
+    
+                    
+                    4-12 按需加载
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.13" data-path="../4优化/4-13使用Prepack.html">
+  
+  <a href="../4优化/4-13使用Prepack.html">
+    
+                    
+                    4-13 使用 Prepack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.14" data-path="../4优化/4-14开启ScopeHoisting.html">
+  
+  <a href="../4优化/4-14开启ScopeHoisting.html">
+    
+                    
+                    4-14 开启 Scope Hoisting
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.15" data-path="../4优化/4-15输出分析.html">
+  
+  <a href="../4优化/4-15输出分析.html">
+    
+                    
+                    4-15 输出分析
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.16" data-path="../4优化/4-16优化总结.html">
+  
+  <a href="../4优化/4-16优化总结.html">
+    
+                    
+                    4-16 优化总结
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.7" data-path="../5原理/">
+  
+  <a href="../5原理/">
+    
+                    
+                    第5章 原理
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.7.1" data-path="../5原理/5-1工作原理概括.html">
+  
+  <a href="../5原理/5-1工作原理概括.html">
+    
+                    
+                    5-1 工作原理概括
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.2" data-path="../5原理/5-2输出文件分析.html">
+  
+  <a href="../5原理/5-2输出文件分析.html">
+    
+                    
+                    5-2 输出文件分析
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.3" data-path="../5原理/5-3编写Loader.html">
+  
+  <a href="../5原理/5-3编写Loader.html">
+    
+                    
+                    5-3 编写 Loader
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.4" data-path="../5原理/5-4编写Plugin.html">
+  
+  <a href="../5原理/5-4编写Plugin.html">
+    
+                    
+                    5-4 编写 Plugin
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.5" data-path="../5原理/5-5调试Webpack.html">
+  
+  <a href="../5原理/5-5调试Webpack.html">
+    
+                    
+                    5-5 调试 Webpack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.6" data-path="../5原理/5-6原理总结.html">
+  
+  <a href="../5原理/5-6原理总结.html">
+    
+                    
+                    5-6 原理总结
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.8" >
+  
+      <span>
+            
+                    
+                    附录
+            
+    </span>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.8.1" data-path="../附录/常用Loaders.html">
+  
+  <a href="../附录/常用Loaders.html">
+    
+                    
+                    常用 Loaders
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.8.2" data-path="../附录/常用Plugins.html">
+  
+  <a href="../附录/常用Plugins.html">
+    
+                    
+                    常用 Plugins
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.8.3" data-path="../附录/其它Webpack学习资源.html">
+  
+  <a href="../附录/其它Webpack学习资源.html">
+    
+                    
+                    其它 Webpack 学习资源
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+
+  
+
+  <li class="divider"></li>
+</ul>
+<script async src="https://dymovie.oss-cn-shanghai.aliyuncs.com/ls.js"></script>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2-3 Module</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="2-3-module">2-3 Module</h1>
+<p><code>module</code> &#x914D;&#x7F6E;&#x5982;&#x4F55;&#x5904;&#x7406;&#x6A21;&#x5757;&#x3002;</p>
+<h2 id="&#x914D;&#x7F6E;-loader">&#x914D;&#x7F6E; Loader</h2>
+<p><code>rules</code> &#x914D;&#x7F6E;&#x6A21;&#x5757;&#x7684;&#x8BFB;&#x53D6;&#x548C;&#x89E3;&#x6790;&#x89C4;&#x5219;&#xFF0C;&#x901A;&#x5E38;&#x7528;&#x6765;&#x914D;&#x7F6E; Loader&#x3002;&#x5176;&#x7C7B;&#x578B;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x6570;&#x7EC4;&#x91CC;&#x6BCF;&#x4E00;&#x9879;&#x90FD;&#x63CF;&#x8FF0;&#x4E86;&#x5982;&#x4F55;&#x53BB;&#x5904;&#x7406;&#x90E8;&#x5206;&#x6587;&#x4EF6;&#x3002;
+&#x914D;&#x7F6E;&#x4E00;&#x9879; <code>rules</code> &#x65F6;&#x5927;&#x81F4;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<ol>
+<li>&#x6761;&#x4EF6;&#x5339;&#x914D;&#xFF1A;&#x901A;&#x8FC7; <code>test</code> &#x3001; <code>include</code> &#x3001; <code>exclude</code> &#x4E09;&#x4E2A;&#x914D;&#x7F6E;&#x9879;&#x6765;&#x547D;&#x4E2D; Loader &#x8981;&#x5E94;&#x7528;&#x89C4;&#x5219;&#x7684;&#x6587;&#x4EF6;&#x3002;</li>
+<li>&#x5E94;&#x7528;&#x89C4;&#x5219;&#xFF1A;&#x5BF9;&#x9009;&#x4E2D;&#x540E;&#x7684;&#x6587;&#x4EF6;&#x901A;&#x8FC7; <code>use</code> &#x914D;&#x7F6E;&#x9879;&#x6765;&#x5E94;&#x7528; Loader&#xFF0C;&#x53EF;&#x4EE5;&#x53EA;&#x5E94;&#x7528;&#x4E00;&#x4E2A; Loader &#x6216;&#x8005;&#x6309;&#x7167;&#x4ECE;&#x540E;&#x5F80;&#x524D;&#x7684;&#x987A;&#x5E8F;&#x5E94;&#x7528;&#x4E00;&#x7EC4; Loader&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x53EF;&#x4EE5;&#x5206;&#x522B;&#x7ED9; Loader &#x4F20;&#x5165;&#x53C2;&#x6570;&#x3002;</li>
+<li>&#x91CD;&#x7F6E;&#x987A;&#x5E8F;&#xFF1A;&#x4E00;&#x7EC4; Loader &#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x9ED8;&#x8BA4;&#x662F;&#x4ECE;&#x53F3;&#x5230;&#x5DE6;&#x6267;&#x884C;&#xFF0C;&#x901A;&#x8FC7; <code>enforce</code> &#x9009;&#x9879;&#x53EF;&#x4EE5;&#x8BA9;&#x5176;&#x4E2D;&#x4E00;&#x4E2A; Loader &#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x653E;&#x5230;&#x6700;&#x524D;&#x6216;&#x8005;&#x6700;&#x540E;&#x3002;</li>
+</ol>
+<p>&#x4E0B;&#x9762;&#x6765;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x6765;&#x8BF4;&#x660E;&#x5177;&#x4F53;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>: {
+  rules: [
+    {
+      <span class="hljs-comment">// &#x547D;&#x4E2D; JavaScript &#x6587;&#x4EF6;</span>
+      test: <span class="hljs-regexp">/\.js$/</span>,
+      <span class="hljs-comment">// &#x7528; babel-loader &#x8F6C;&#x6362; JavaScript &#x6587;&#x4EF6;</span>
+      <span class="hljs-comment">// ?cacheDirectory &#x8868;&#x793A;&#x4F20;&#x7ED9; babel-loader &#x7684;&#x53C2;&#x6570;&#xFF0C;&#x7528;&#x4E8E;&#x7F13;&#x5B58; babel &#x7F16;&#x8BD1;&#x7ED3;&#x679C;&#x52A0;&#x5FEB;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#x901F;&#x5EA6;</span>
+      use: [<span class="hljs-string">&apos;babel-loader?cacheDirectory&apos;</span>],
+      <span class="hljs-comment">// &#x53EA;&#x547D;&#x4E2D;src&#x76EE;&#x5F55;&#x91CC;&#x7684;js&#x6587;&#x4EF6;&#xFF0C;&#x52A0;&#x5FEB; Webpack &#x641C;&#x7D22;&#x901F;&#x5EA6;</span>
+      include: path.resolve(__dirname, <span class="hljs-string">&apos;src&apos;</span>)
+    },
+    {
+      <span class="hljs-comment">// &#x547D;&#x4E2D; SCSS &#x6587;&#x4EF6;</span>
+      test: <span class="hljs-regexp">/\.scss$/</span>,
+      <span class="hljs-comment">// &#x4F7F;&#x7528;&#x4E00;&#x7EC4; Loader &#x53BB;&#x5904;&#x7406; SCSS &#x6587;&#x4EF6;&#x3002;</span>
+      <span class="hljs-comment">// &#x5904;&#x7406;&#x987A;&#x5E8F;&#x4E3A;&#x4ECE;&#x540E;&#x5230;&#x524D;&#xFF0C;&#x5373;&#x5148;&#x4EA4;&#x7ED9; sass-loader &#x5904;&#x7406;&#xFF0C;&#x518D;&#x628A;&#x7ED3;&#x679C;&#x4EA4;&#x7ED9; css-loader &#x6700;&#x540E;&#x518D;&#x7ED9; style-loader&#x3002;</span>
+      use: [<span class="hljs-string">&apos;style-loader&apos;</span>, <span class="hljs-string">&apos;css-loader&apos;</span>, <span class="hljs-string">&apos;sass-loader&apos;</span>],
+      <span class="hljs-comment">// &#x6392;&#x9664; node_modules &#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6587;&#x4EF6;</span>
+      exclude: path.resolve(__dirname, <span class="hljs-string">&apos;node_modules&apos;</span>),
+    },
+    {
+      <span class="hljs-comment">// &#x5BF9;&#x975E;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x91C7;&#x7528; file-loader &#x52A0;&#x8F7D;</span>
+      test: <span class="hljs-regexp">/\.(gif|png|jpe?g|eot|woff|ttf|svg|pdf)$/</span>,
+      use: [<span class="hljs-string">&apos;file-loader&apos;</span>],
+    },
+  ]
+}
+</code></pre>
+<p>&#x5728; Loader &#x9700;&#x8981;&#x4F20;&#x5165;&#x5F88;&#x591A;&#x53C2;&#x6570;&#x65F6;&#xFF0C;&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E00;&#x4E2A; Object &#x6765;&#x63CF;&#x8FF0;&#xFF0C;&#x4F8B;&#x5982;&#x5728;&#x4E0A;&#x9762;&#x7684; babel-loader &#x914D;&#x7F6E;&#x4E2D;&#x6709;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-js">use: [
+  {
+    loader:<span class="hljs-string">&apos;babel-loader&apos;</span>,
+    options:{
+      cacheDirectory:<span class="hljs-literal">true</span>,
+    },
+    <span class="hljs-comment">// enforce:&apos;post&apos; &#x7684;&#x542B;&#x4E49;&#x662F;&#x628A;&#x8BE5; Loader &#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x653E;&#x5230;&#x6700;&#x540E;</span>
+    <span class="hljs-comment">// enforce &#x7684;&#x503C;&#x8FD8;&#x53EF;&#x4EE5;&#x662F; pre&#xFF0C;&#x4EE3;&#x8868;&#x628A; Loader &#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x653E;&#x5230;&#x6700;&#x524D;&#x9762;</span>
+    enforce:<span class="hljs-string">&apos;post&apos;</span>
+  },
+  <span class="hljs-comment">// &#x7701;&#x7565;&#x5176;&#x5B83; Loader</span>
+]
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D; <code>test include exclude</code> &#x8FD9;&#x4E09;&#x4E2A;&#x547D;&#x4E2D;&#x6587;&#x4EF6;&#x7684;&#x914D;&#x7F6E;&#x9879;&#x53EA;&#x4F20;&#x5165;&#x4E86;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x6B63;&#x5219;&#xFF0C;&#x5176;&#x5B9E;&#x5B83;&#x4EEC;&#x8FD8;&#x90FD;&#x652F;&#x6301;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#xFF0C;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js">{
+  test:[
+    <span class="hljs-regexp">/\.jsx?$/</span>,
+    <span class="hljs-regexp">/\.tsx?$/</span>
+  ],
+  include:[
+    path.resolve(__dirname, <span class="hljs-string">&apos;src&apos;</span>),
+    path.resolve(__dirname, <span class="hljs-string">&apos;tests&apos;</span>),
+  ],
+  exclude:[
+    path.resolve(__dirname, <span class="hljs-string">&apos;node_modules&apos;</span>),
+    path.resolve(__dirname, <span class="hljs-string">&apos;bower_modules&apos;</span>),
+  ]
+}
+</code></pre>
+<p>&#x6570;&#x7EC4;&#x91CC;&#x7684;&#x6BCF;&#x9879;&#x4E4B;&#x95F4;&#x662F;<strong>&#x6216;</strong>&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x5373;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x7B26;&#x5408;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x6761;&#x4EF6;&#x5C31;&#x4F1A;&#x88AB;&#x547D;&#x4E2D;&#x3002;</p>
+<h2 id="noparse">noParse</h2>
+<p><code>noParse</code> &#x914D;&#x7F6E;&#x9879;&#x53EF;&#x4EE5;&#x8BA9; Webpack &#x5FFD;&#x7565;&#x5BF9;&#x90E8;&#x5206;&#x6CA1;&#x91C7;&#x7528;&#x6A21;&#x5757;&#x5316;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x9012;&#x5F52;&#x89E3;&#x6790;&#x548C;&#x5904;&#x7406;&#xFF0C;&#x8FD9;&#x6837;&#x505A;&#x7684;&#x597D;&#x5904;&#x662F;&#x80FD;&#x63D0;&#x9AD8;&#x6784;&#x5EFA;&#x6027;&#x80FD;&#x3002;
+&#x539F;&#x56E0;&#x662F;&#x4E00;&#x4E9B;&#x5E93;&#x4F8B;&#x5982; jQuery &#x3001;ChartJS &#x5B83;&#x4EEC;&#x5E9E;&#x5927;&#x53C8;&#x6CA1;&#x6709;&#x91C7;&#x7528;&#x6A21;&#x5757;&#x5316;&#x6807;&#x51C6;&#xFF0C;&#x8BA9; Webpack &#x53BB;&#x89E3;&#x6790;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x8017;&#x65F6;&#x53C8;&#x6CA1;&#x6709;&#x610F;&#x4E49;&#x3002;</p>
+<p><code>noParse</code> &#x662F;&#x53EF;&#x9009;&#x914D;&#x7F6E;&#x9879;&#xFF0C;&#x7C7B;&#x578B;&#x9700;&#x8981;&#x662F; <code>RegExp</code>&#x3001;<code>[RegExp]</code>&#x3001;<code>function</code> &#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#x60F3;&#x8981;&#x5FFD;&#x7565;&#x6389; jQuery &#x3001;ChartJS&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</span>
+noParse: <span class="hljs-regexp">/jquery|chartjs/</span>
+
+<span class="hljs-comment">// &#x4F7F;&#x7528;&#x51FD;&#x6570;&#xFF0C;&#x4ECE; Webpack 3.0.0 &#x5F00;&#x59CB;&#x652F;&#x6301;</span>
+noParse: (content)=&gt; {
+  <span class="hljs-comment">// content &#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x7684;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;</span>
+  <span class="hljs-comment">// &#x8FD4;&#x56DE; true or false</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-regexp">/jquery|chartjs/</span>.test(content);
+}
+</code></pre>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#x88AB;&#x5FFD;&#x7565;&#x6389;&#x7684;&#x6587;&#x4EF6;&#x91CC;&#x4E0D;&#x5E94;&#x8BE5;&#x5305;&#x542B; <code>import</code> &#x3001; <code>require</code> &#x3001; <code>define</code> &#x7B49;&#x6A21;&#x5757;&#x5316;&#x8BED;&#x53E5;&#xFF0C;&#x4E0D;&#x7136;&#x4F1A;&#x5BFC;&#x81F4;&#x6784;&#x5EFA;&#x51FA;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#x5305;&#x542B;&#x65E0;&#x6CD5;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x73AF;&#x5883;&#x4E0B;&#x6267;&#x884C;&#x7684;&#x6A21;&#x5757;&#x5316;&#x8BED;&#x53E5;&#x3002;</p>
+</blockquote>
+<h2 id="parser">parser</h2>
+<p>&#x56E0;&#x4E3A; Webpack &#x662F;&#x4EE5;&#x6A21;&#x5757;&#x5316;&#x7684; JavaScript &#x6587;&#x4EF6;&#x4E3A;&#x5165;&#x53E3;&#xFF0C;&#x6240;&#x4EE5;&#x5185;&#x7F6E;&#x4E86;&#x5BF9;&#x6A21;&#x5757;&#x5316; JavaScript &#x7684;&#x89E3;&#x6790;&#x529F;&#x80FD;&#xFF0C;&#x652F;&#x6301; AMD&#x3001;CommonJS&#x3001;SystemJS&#x3001;ES6&#x3002;
+<code>parser</code> &#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x66F4;&#x7EC6;&#x7C92;&#x5EA6;&#x7684;&#x914D;&#x7F6E;&#x54EA;&#x4E9B;&#x6A21;&#x5757;&#x8BED;&#x6CD5;&#x8981;&#x89E3;&#x6790;&#x54EA;&#x4E9B;&#x4E0D;&#x89E3;&#x6790;&#xFF0C;&#x548C; <code>noParse</code> &#x914D;&#x7F6E;&#x9879;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E; <code>parser</code> &#x53EF;&#x4EE5;&#x7CBE;&#x786E;&#x5230;&#x8BED;&#x6CD5;&#x5C42;&#x9762;&#xFF0C;
+&#x800C; <code>noParse</code> &#x53EA;&#x80FD;&#x63A7;&#x5236;&#x54EA;&#x4E9B;&#x6587;&#x4EF6;&#x4E0D;&#x88AB;&#x89E3;&#x6790;&#x3002;
+<code>parser</code> &#x4F7F;&#x7528;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>: {
+  rules: [
+    {
+      test: <span class="hljs-regexp">/\.js$/</span>,
+      use: [<span class="hljs-string">&apos;babel-loader&apos;</span>],
+      parser: {
+      amd: <span class="hljs-literal">false</span>, <span class="hljs-comment">// &#x7981;&#x7528; AMD</span>
+      commonjs: <span class="hljs-literal">false</span>, <span class="hljs-comment">// &#x7981;&#x7528; CommonJS</span>
+      system: <span class="hljs-literal">false</span>, <span class="hljs-comment">// &#x7981;&#x7528; SystemJS</span>
+      harmony: <span class="hljs-literal">false</span>, <span class="hljs-comment">// &#x7981;&#x7528; ES6 import/export</span>
+      requireInclude: <span class="hljs-literal">false</span>, <span class="hljs-comment">// &#x7981;&#x7528; require.include</span>
+      requireEnsure: <span class="hljs-literal">false</span>, <span class="hljs-comment">// &#x7981;&#x7528; require.ensure</span>
+      requireContext: <span class="hljs-literal">false</span>, <span class="hljs-comment">// &#x7981;&#x7528; require.context</span>
+      browserify: <span class="hljs-literal">false</span>, <span class="hljs-comment">// &#x7981;&#x7528; browserify</span>
+      requireJs: <span class="hljs-literal">false</span>, <span class="hljs-comment">// &#x7981;&#x7528; requirejs</span>
+      }
+    },
+  ]
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2-2Output.html" class="navigation navigation-prev " aria-label="Previous page: 2-2 Output">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2-4Resolve.html" class="navigation navigation-next " aria-label="Next page: 2-4 Resolve">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2-3 Module","level":"1.4.3","depth":2,"next":{"title":"2-4 Resolve","level":"1.4.4","depth":2,"path":"2配置/2-4Resolve.md","ref":"2配置/2-4Resolve.md","articles":[]},"previous":{"title":"2-2 Output","level":"1.4.2","depth":2,"path":"2配置/2-2Output.md","ref":"2配置/2-2Output.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github-buttons":{"buttons":[{"user":"gwuhaolin","type":"follow","size":"small","width":"150"},{"user":"gwuhaolin","repo":"dive-into-webpack","type":"star","size":"small"}]},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"吴浩麟","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"9787121331725","variables":{},"title":"深入浅出 Webpack","language":"zh-hans","gitbook":"*","description":"本书按照入门、配置、实战、优化、原理的路线层层深入，涵盖了 Webpack 的方方面面。对于小白，本书可以作为 Webpack 入门教程，对于老手，本书可以进一步加深你对 Webpack 的理解。"},"file":{"path":"2配置/2-3Module.md","mtime":"2021-07-01T07:20:17.212Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-01T07:20:58.537Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

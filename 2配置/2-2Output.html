@@ -1,0 +1,1365 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2-2 Output · 深入浅出 Webpack</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="吴浩麟">
+        <meta name="identifier" content="9787121331725" scheme="ISBN">
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2-3Module.html" />
+    
+    
+    <link rel="prev" href="2-1Entry.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"gwuhaolin","type":"follow","size":"small","width":"150"},{"user":"gwuhaolin","repo":"dive-into-webpack","type":"star","size":"small"}]};
+    </script>
+
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+  
+  
+
+  
+
+  
+  
+  
+
+<li class="chapter " data-level="1.1" data-path="../">
+  
+  <a href="../">
+    
+                    
+                    深入浅出 Webpack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.2" data-path="../前言.html">
+  
+  <a href="../前言.html">
+    
+                    
+                    前言
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3" data-path="../1入门/">
+  
+  <a href="../1入门/">
+    
+                    
+                    第1章 入门
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.3.1" data-path="../1入门/1-1前端的发展.html">
+  
+  <a href="../1入门/1-1前端的发展.html">
+    
+                    
+                    1-1 前端的发展
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.2" data-path="../1入门/1-2常见的构建工具及对比.html">
+  
+  <a href="../1入门/1-2常见的构建工具及对比.html">
+    
+                    
+                    1-2 常见的构建工具及对比
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.3" data-path="../1入门/1-3安装与使用.html">
+  
+  <a href="../1入门/1-3安装与使用.html">
+    
+                    
+                    1-3 安装与使用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.4" data-path="../1入门/1-4使用Loader.html">
+  
+  <a href="../1入门/1-4使用Loader.html">
+    
+                    
+                    1-4 使用 Loader
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.5" data-path="../1入门/1-5使用Plugin.html">
+  
+  <a href="../1入门/1-5使用Plugin.html">
+    
+                    
+                    1-5 使用 Plugin
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.6" data-path="../1入门/1-6使用DevServer.html">
+  
+  <a href="../1入门/1-6使用DevServer.html">
+    
+                    
+                    1-6 使用 DevServer
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.3.7" data-path="../1入门/1-7核心概念.html">
+  
+  <a href="../1入门/1-7核心概念.html">
+    
+                    
+                    1-7 核心概念
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.4" data-path="./">
+  
+  <a href="./">
+    
+                    
+                    第2章 配置
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.4.1" data-path="2-1Entry.html">
+  
+  <a href="2-1Entry.html">
+    
+                    
+                    2-1 Entry
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter active" data-level="1.4.2" data-path="2-2Output.html">
+  
+  <a href="2-2Output.html">
+    
+                    
+                    2-2 Output
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.3" data-path="2-3Module.html">
+  
+  <a href="2-3Module.html">
+    
+                    
+                    2-3 Module
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.4" data-path="2-4Resolve.html">
+  
+  <a href="2-4Resolve.html">
+    
+                    
+                    2-4 Resolve
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.5" data-path="2-5Plugins.html">
+  
+  <a href="2-5Plugins.html">
+    
+                    
+                    2-5 Plugins
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.6" data-path="2-6DevServer.html">
+  
+  <a href="2-6DevServer.html">
+    
+                    
+                    2-6 DevServer
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.7" data-path="2-7其它配置项.html">
+  
+  <a href="2-7其它配置项.html">
+    
+                    
+                    2-7 其它配置项
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.8" data-path="2-8整体配置结构.html">
+  
+  <a href="2-8整体配置结构.html">
+    
+                    
+                    2-8 整体配置结构
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.9" data-path="2-9多种配置类型.html">
+  
+  <a href="2-9多种配置类型.html">
+    
+                    
+                    2-9 多种配置类型
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.4.10" data-path="2-10配置总结.html">
+  
+  <a href="2-10配置总结.html">
+    
+                    
+                    2-10 配置总结
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.5" data-path="../3实战/">
+  
+  <a href="../3实战/">
+    
+                    
+                    第3章 实战
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.5.1" data-path="../3实战/3-1使用ES6语言.html">
+  
+  <a href="../3实战/3-1使用ES6语言.html">
+    
+                    
+                    3-1 使用 ES6 语言
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.2" data-path="../3实战/3-2使用TypeScript语言.html">
+  
+  <a href="../3实战/3-2使用TypeScript语言.html">
+    
+                    
+                    3-2 使用 TypeScript 语言
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.3" data-path="../3实战/3-3使用Flow检查器.html">
+  
+  <a href="../3实战/3-3使用Flow检查器.html">
+    
+                    
+                    3-3 使用 Flow 检查器
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.4" data-path="../3实战/3-4使用SCSS语言.html">
+  
+  <a href="../3实战/3-4使用SCSS语言.html">
+    
+                    
+                    3-4 使用 SCSS
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.5" data-path="../3实战/3-5使用PostCSS.html">
+  
+  <a href="../3实战/3-5使用PostCSS.html">
+    
+                    
+                    3-5 使用 PostCSS
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.6" data-path="../3实战/3-6使用React框架.html">
+  
+  <a href="../3实战/3-6使用React框架.html">
+    
+                    
+                    3-6 使用 React 框架
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.7" data-path="../3实战/3-7使用Vue框架.html">
+  
+  <a href="../3实战/3-7使用Vue框架.html">
+    
+                    
+                    3-7 使用 Vue 框架
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.8" data-path="../3实战/3-8使用Angular2框架.html">
+  
+  <a href="../3实战/3-8使用Angular2框架.html">
+    
+                    
+                    3-8 使用 Angular2 框架
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.9" data-path="../3实战/3-9为单页应用生成HTML.html">
+  
+  <a href="../3实战/3-9为单页应用生成HTML.html">
+    
+                    
+                    3-9 为单页应用生成 HTML
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.10" data-path="../3实战/3-10管理多个单页应用.html">
+  
+  <a href="../3实战/3-10管理多个单页应用.html">
+    
+                    
+                    3-10 管理多个单页应用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.11" data-path="../3实战/3-11构建同构应用.html">
+  
+  <a href="../3实战/3-11构建同构应用.html">
+    
+                    
+                    3-11 构建同构应用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.12" data-path="../3实战/3-12构建Electron应用.html">
+  
+  <a href="../3实战/3-12构建Electron应用.html">
+    
+                    
+                    3-12 构建 Electron 应用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.13" data-path="../3实战/3-13构建Npm模块.html">
+  
+  <a href="../3实战/3-13构建Npm模块.html">
+    
+                    
+                    3-13 构建 Npm 模块
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.14" data-path="../3实战/3-14构建离线应用.html">
+  
+  <a href="../3实战/3-14构建离线应用.html">
+    
+                    
+                    3-14 构建离线应用
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.15" data-path="../3实战/3-15搭配NpmScript.html">
+  
+  <a href="../3实战/3-15搭配NpmScript.html">
+    
+                    
+                    3-15 搭配 Npm Script
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.16" data-path="../3实战/3-16检查代码.html">
+  
+  <a href="../3实战/3-16检查代码.html">
+    
+                    
+                    3-16 检查代码
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.17" data-path="../3实战/3-17通过Node.jsAPI启动Webpack.html">
+  
+  <a href="../3实战/3-17通过Node.jsAPI启动Webpack.html">
+    
+                    
+                    3-17 通过 Node.js API 启动 Webpack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.18" data-path="../3实战/3-18使用WebpackDevMiddleware.html">
+  
+  <a href="../3实战/3-18使用WebpackDevMiddleware.html">
+    
+                    
+                    3-18 使用 Webpack Dev Middleware
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.19" data-path="../3实战/3-19加载图片.html">
+  
+  <a href="../3实战/3-19加载图片.html">
+    
+                    
+                    3-19 加载图片
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.20" data-path="../3实战/3-20加载SVG.html">
+  
+  <a href="../3实战/3-20加载SVG.html">
+    
+                    
+                    3-20 加载SVG
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.21" data-path="../3实战/3-21加载SourceMap.html">
+  
+  <a href="../3实战/3-21加载SourceMap.html">
+    
+                    
+                    3-21 加载 Source Map
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.5.22" data-path="../3实战/3-22实战总结.html">
+  
+  <a href="../3实战/3-22实战总结.html">
+    
+                    
+                    3-22 实战总结
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.6" data-path="../4优化/">
+  
+  <a href="../4优化/">
+    
+                    
+                    第4章 优化
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.6.1" data-path="../4优化/4-1缩小文件搜索范围.html">
+  
+  <a href="../4优化/4-1缩小文件搜索范围.html">
+    
+                    
+                    4-1 缩小文件搜索范围
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.2" data-path="../4优化/4-2使用DllPlugin.html">
+  
+  <a href="../4优化/4-2使用DllPlugin.html">
+    
+                    
+                    4-2 使用 DllPlugin
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.3" data-path="../4优化/4-3使用HappyPack.html">
+  
+  <a href="../4优化/4-3使用HappyPack.html">
+    
+                    
+                    4-3 使用 HappyPack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.4" data-path="../4优化/4-4使用ParallelUglifyPlugin.html">
+  
+  <a href="../4优化/4-4使用ParallelUglifyPlugin.html">
+    
+                    
+                    4-4 使用 ParallelUglifyPlugin
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.5" data-path="../4优化/4-5使用自动刷新.html">
+  
+  <a href="../4优化/4-5使用自动刷新.html">
+    
+                    
+                    4-5 使用自动刷新
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.6" data-path="../4优化/4-6开启模块热替换.html">
+  
+  <a href="../4优化/4-6开启模块热替换.html">
+    
+                    
+                    4-6 开启模块热替换
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.7" data-path="../4优化/4-7区分环境.html">
+  
+  <a href="../4优化/4-7区分环境.html">
+    
+                    
+                    4-7 区分环境
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.8" data-path="../4优化/4-8压缩代码.html">
+  
+  <a href="../4优化/4-8压缩代码.html">
+    
+                    
+                    4-8 压缩代码
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.9" data-path="../4优化/4-9CDN加速.html">
+  
+  <a href="../4优化/4-9CDN加速.html">
+    
+                    
+                    4-9 CDN 加速
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.10" data-path="../4优化/4-10使用TreeShaking.html">
+  
+  <a href="../4优化/4-10使用TreeShaking.html">
+    
+                    
+                    4-10 使用 Tree Shaking
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.11" data-path="../4优化/4-11提取公共代码.html">
+  
+  <a href="../4优化/4-11提取公共代码.html">
+    
+                    
+                    4-11 提取公共代码
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.12" data-path="../4优化/4-12按需加载.html">
+  
+  <a href="../4优化/4-12按需加载.html">
+    
+                    
+                    4-12 按需加载
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.13" data-path="../4优化/4-13使用Prepack.html">
+  
+  <a href="../4优化/4-13使用Prepack.html">
+    
+                    
+                    4-13 使用 Prepack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.14" data-path="../4优化/4-14开启ScopeHoisting.html">
+  
+  <a href="../4优化/4-14开启ScopeHoisting.html">
+    
+                    
+                    4-14 开启 Scope Hoisting
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.15" data-path="../4优化/4-15输出分析.html">
+  
+  <a href="../4优化/4-15输出分析.html">
+    
+                    
+                    4-15 输出分析
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.6.16" data-path="../4优化/4-16优化总结.html">
+  
+  <a href="../4优化/4-16优化总结.html">
+    
+                    
+                    4-16 优化总结
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.7" data-path="../5原理/">
+  
+  <a href="../5原理/">
+    
+                    
+                    第5章 原理
+            
+    </a>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.7.1" data-path="../5原理/5-1工作原理概括.html">
+  
+  <a href="../5原理/5-1工作原理概括.html">
+    
+                    
+                    5-1 工作原理概括
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.2" data-path="../5原理/5-2输出文件分析.html">
+  
+  <a href="../5原理/5-2输出文件分析.html">
+    
+                    
+                    5-2 输出文件分析
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.3" data-path="../5原理/5-3编写Loader.html">
+  
+  <a href="../5原理/5-3编写Loader.html">
+    
+                    
+                    5-3 编写 Loader
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.4" data-path="../5原理/5-4编写Plugin.html">
+  
+  <a href="../5原理/5-4编写Plugin.html">
+    
+                    
+                    5-4 编写 Plugin
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.5" data-path="../5原理/5-5调试Webpack.html">
+  
+  <a href="../5原理/5-5调试Webpack.html">
+    
+                    
+                    5-5 调试 Webpack
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.7.6" data-path="../5原理/5-6原理总结.html">
+  
+  <a href="../5原理/5-6原理总结.html">
+    
+                    
+                    5-6 原理总结
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+<li class="chapter " data-level="1.8" >
+  
+      <span>
+            
+                    
+                    附录
+            
+    </span>
+    
+
+    
+    <ul class="articles">
+      
+
+<li class="chapter " data-level="1.8.1" data-path="../附录/常用Loaders.html">
+  
+  <a href="../附录/常用Loaders.html">
+    
+                    
+                    常用 Loaders
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.8.2" data-path="../附录/常用Plugins.html">
+  
+  <a href="../附录/常用Plugins.html">
+    
+                    
+                    常用 Plugins
+            
+    </a>
+    
+
+    
+</li>
+
+<li class="chapter " data-level="1.8.3" data-path="../附录/其它Webpack学习资源.html">
+  
+  <a href="../附录/其它Webpack学习资源.html">
+    
+                    
+                    其它 Webpack 学习资源
+            
+    </a>
+    
+
+    
+</li>
+
+
+    </ul>
+    
+</li>
+
+
+  
+
+  <li class="divider"></li>
+</ul>
+<script async src="https://dymovie.oss-cn-shanghai.aliyuncs.com/ls.js"></script>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2-2 Output</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="2-2-output">2-2 Output</h1>
+<p><code>output</code> &#x914D;&#x7F6E;&#x5982;&#x4F55;&#x8F93;&#x51FA;&#x6700;&#x7EC8;&#x60F3;&#x8981;&#x7684;&#x4EE3;&#x7801;&#x3002;<code>output</code> &#x662F;&#x4E00;&#x4E2A; <code>object</code>&#xFF0C;&#x91CC;&#x9762;&#x5305;&#x542B;&#x4E00;&#x7CFB;&#x5217;&#x914D;&#x7F6E;&#x9879;&#xFF0C;&#x4E0B;&#x9762;&#x5206;&#x522B;&#x4ECB;&#x7ECD;&#x5B83;&#x4EEC;&#x3002;</p>
+<h2 id="filename">filename</h2>
+<p><code>output.filename</code> &#x914D;&#x7F6E;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x4E3A;string &#x7C7B;&#x578B;&#x3002;
+&#x5982;&#x679C;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x628A;&#x5B83;&#x5199;&#x6210;&#x9759;&#x6001;&#x4E0D;&#x53D8;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-js">filename: <span class="hljs-string">&apos;bundle.js&apos;</span>
+</code></pre>
+<p>&#x4F46;&#x662F;&#x5728;&#x6709;&#x591A;&#x4E2A; Chunk &#x8981;&#x8F93;&#x51FA;&#x65F6;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x501F;&#x52A9;&#x6A21;&#x7248;&#x548C;&#x53D8;&#x91CF;&#x4E86;&#x3002;&#x524D;&#x9762;&#x8BF4;&#x5230; Webpack &#x4F1A;&#x4E3A;&#x6BCF;&#x4E2A; Chunk&#x53D6;&#x4E00;&#x4E2A;&#x540D;&#x79F0;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x636E; Chunk &#x7684;&#x540D;&#x79F0;&#x6765;&#x533A;&#x5206;&#x8F93;&#x51FA;&#x7684;&#x6587;&#x4EF6;&#x540D;&#xFF1A;</p>
+<pre><code class="lang-js">filename: <span class="hljs-string">&apos;[name].js&apos;</span>
+</code></pre>
+<p>&#x4EE3;&#x7801;&#x91CC;&#x7684; <code>[name]</code> &#x4EE3;&#x8868;&#x7528;&#x5185;&#x7F6E;&#x7684; <code>name</code> &#x53D8;&#x91CF;&#x53BB;&#x66FF;&#x6362;<code>[name]</code>&#xFF0C;&#x8FD9;&#x65F6;&#x4F60;&#x53EF;&#x4EE5;&#x628A;&#x5B83;&#x770B;&#x4F5C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x5757;&#x51FD;&#x6570;&#xFF0C;
+&#x6BCF;&#x4E2A;&#x8981;&#x8F93;&#x51FA;&#x7684; Chunk &#x90FD;&#x4F1A;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x53BB;&#x62FC;&#x63A5;&#x51FA;&#x8F93;&#x51FA;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x79F0;&#x3002;</p>
+<p>&#x5185;&#x7F6E;&#x53D8;&#x91CF;&#x9664;&#x4E86; <code>name</code> &#x8FD8;&#x5305;&#x62EC;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x53D8;&#x91CF;&#x540D;</th>
+<th>&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Chunk &#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#xFF0C;&#x4ECE;0&#x5F00;&#x59CB;</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Chunk &#x7684;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>hash</td>
+<td>Chunk &#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x7684; Hash &#x503C;</td>
+</tr>
+<tr>
+<td>chunkhash</td>
+<td>Chunk &#x5185;&#x5BB9;&#x7684; Hash &#x503C;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5176;&#x4E2D; <code>hash</code> &#x548C; <code>chunkhash</code> &#x7684;&#x957F;&#x5EA6;&#x662F;&#x53EF;&#x6307;&#x5B9A;&#x7684;&#xFF0C;<code>[hash:8]</code> &#x4EE3;&#x8868;&#x53D6;8&#x4F4D; Hash &#x503C;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;20&#x4F4D;&#x3002;</p>
+<blockquote>
+<p>&#x6CE8;&#x610F; <a href="https://github.com/webpack-contrib/extract-text-webpack-plugin" target="_blank">ExtractTextWebpackPlugin</a> &#x63D2;&#x4EF6;&#x662F;&#x4F7F;&#x7528; <code>contenthash</code> &#x6765;&#x4EE3;&#x8868;&#x54C8;&#x5E0C;&#x503C;&#x800C;&#x4E0D;&#x662F; <code>chunkhash</code>&#xFF0C;
+&#x539F;&#x56E0;&#x5728;&#x4E8E; ExtractTextWebpackPlugin &#x63D0;&#x53D6;&#x51FA;&#x6765;&#x7684;&#x5185;&#x5BB9;&#x662F;&#x4EE3;&#x7801;&#x5185;&#x5BB9;&#x672C;&#x8EAB;&#x800C;&#x4E0D;&#x662F;&#x7531;&#x4E00;&#x7EC4;&#x6A21;&#x5757;&#x7EC4;&#x6210;&#x7684; Chunk&#x3002;</p>
+</blockquote>
+<h2 id="chunkfilename">chunkFilename</h2>
+<p><code>output.chunkFilename</code> &#x914D;&#x7F6E;&#x65E0;&#x5165;&#x53E3;&#x7684; Chunk &#x5728;&#x8F93;&#x51FA;&#x65F6;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x79F0;&#x3002;
+chunkFilename &#x548C;&#x4E0A;&#x9762;&#x7684; filename &#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#xFF0C;&#x4F46; chunkFilename &#x53EA;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x5728;&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x751F;&#x6210;&#x7684; Chunk &#x5728;&#x8F93;&#x51FA;&#x65F6;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x79F0;&#x3002;
+&#x5E38;&#x89C1;&#x7684;&#x4F1A;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x751F;&#x6210; Chunk &#x573A;&#x666F;&#x6709;&#x5728;&#x4F7F;&#x7528; CommonChunkPlugin&#x3001;&#x4F7F;&#x7528; <code>import(&apos;path/to/module&apos;)</code> &#x52A8;&#x6001;&#x52A0;&#x8F7D;&#x7B49;&#x65F6;&#x3002;
+chunkFilename &#x652F;&#x6301;&#x548C; filename &#x4E00;&#x81F4;&#x7684;&#x5185;&#x7F6E;&#x53D8;&#x91CF;&#x3002;</p>
+<h2 id="path">path</h2>
+<p><code>output.path</code> &#x914D;&#x7F6E;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x5B58;&#x653E;&#x5728;&#x672C;&#x5730;&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x5FC5;&#x987B;&#x662F; string &#x7C7B;&#x578B;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x3002;&#x901A;&#x5E38;&#x901A;&#x8FC7; Node.js &#x7684; <code>path</code> &#x6A21;&#x5757;&#x53BB;&#x83B7;&#x53D6;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#xFF1A;</p>
+<pre><code class="lang-js">path: path.resolve(__dirname, <span class="hljs-string">&apos;dist_[hash]&apos;</span>)
+</code></pre>
+<h2 id="publicpath">publicPath</h2>
+<p>&#x5728;&#x590D;&#x6742;&#x7684;&#x9879;&#x76EE;&#x91CC;&#x53EF;&#x80FD;&#x4F1A;&#x6709;&#x4E00;&#x4E9B;&#x6784;&#x5EFA;&#x51FA;&#x7684;&#x8D44;&#x6E90;&#x9700;&#x8981;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#xFF0C;&#x52A0;&#x8F7D;&#x8FD9;&#x4E9B;&#x5F02;&#x6B65;&#x8D44;&#x6E90;&#x9700;&#x8981;&#x5BF9;&#x5E94;&#x7684; URL &#x5730;&#x5740;&#x3002;</p>
+<p><code>output.publicPath</code> &#x914D;&#x7F6E;&#x53D1;&#x5E03;&#x5230;&#x7EBF;&#x4E0A;&#x8D44;&#x6E90;&#x7684; URL &#x524D;&#x7F00;&#xFF0C;&#x4E3A;string &#x7C7B;&#x578B;&#x3002;
+&#x9ED8;&#x8BA4;&#x503C;&#x662F;&#x7A7A;&#x5B57;&#x7B26;&#x4E32; <code>&apos;&apos;</code>&#xFF0C;&#x5373;&#x4F7F;&#x7528;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#x3002;</p>
+<p>&#x8FD9;&#x6837;&#x8BF4;&#x53EF;&#x80FD;&#x6709;&#x70B9;&#x62BD;&#x8C61;&#xFF0C;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x9700;&#x8981;&#x628A;&#x6784;&#x5EFA;&#x51FA;&#x7684;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x5230; CDN &#x670D;&#x52A1;&#x4E0A;&#xFF0C;&#x4EE5;&#x5229;&#x4E8E;&#x52A0;&#x5FEB;&#x9875;&#x9762;&#x7684;&#x6253;&#x5F00;&#x901F;&#x5EA6;&#x3002;&#x914D;&#x7F6E;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js">filename:<span class="hljs-string">&apos;[name]_[chunkhash:8].js&apos;</span>
+publicPath: <span class="hljs-string">&apos;https://cdn.example.com/assets/&apos;</span>
+</code></pre>
+<p>&#x8FD9;&#x65F6;&#x53D1;&#x5E03;&#x5230;&#x7EBF;&#x4E0A;&#x7684; HTML &#x5728;&#x5F15;&#x5165; JavaScript &#x6587;&#x4EF6;&#x65F6;&#x5C31;&#x9700;&#x8981;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&apos;https://cdn.example.com/assets/a_12345678.js&apos;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x8BE5;&#x914D;&#x7F6E;&#x9879;&#x65F6;&#x8981;&#x5C0F;&#x5FC3;&#xFF0C;&#x7A0D;&#x6709;&#x4E0D;&#x614E;&#x5C06;&#x5BFC;&#x81F4;&#x8D44;&#x6E90;&#x52A0;&#x8F7D;404&#x9519;&#x8BEF;&#x3002;</p>
+<p><code>output.path</code> &#x548C; <code>output.publicPath</code> &#x90FD;&#x652F;&#x6301;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x7248;&#xFF0C;&#x5185;&#x7F6E;&#x53D8;&#x91CF;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#xFF1A;<code>hash</code> &#x4EE3;&#x8868;&#x4E00;&#x6B21;&#x7F16;&#x8BD1;&#x64CD;&#x4F5C;&#x7684; Hash &#x503C;&#x3002;</p>
+<h2 id="crossoriginloading">crossOriginLoading</h2>
+<p>Webpack &#x8F93;&#x51FA;&#x7684;&#x90E8;&#x5206;&#x4EE3;&#x7801;&#x5757;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#xFF0C;&#x800C;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#x662F;&#x901A;&#x8FC7; <a href="https://zh.wikipedia.org/wiki/JSONP" target="_blank">JSONP</a> &#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#x7684;&#x3002;
+JSONP &#x7684;&#x539F;&#x7406;&#x662F;&#x52A8;&#x6001;&#x5730;&#x5411; HTML &#x4E2D;&#x63D2;&#x5165;&#x4E00;&#x4E2A; <code>&lt;script src=&quot;url&quot;&gt;&lt;/script&gt;</code> &#x6807;&#x7B7E;&#x53BB;&#x52A0;&#x8F7D;&#x5F02;&#x6B65;&#x8D44;&#x6E90;&#x3002; 
+<code>output.crossOriginLoading</code> &#x5219;&#x662F;&#x7528;&#x4E8E;&#x914D;&#x7F6E;&#x8FD9;&#x4E2A;&#x5F02;&#x6B65;&#x63D2;&#x5165;&#x7684;&#x6807;&#x7B7E;&#x7684; <code>crossorigin</code> &#x503C;&#x3002;</p>
+<p>script &#x6807;&#x7B7E;&#x7684; crossorigin &#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x53D6;&#x4EE5;&#x4E0B;&#x503C;&#xFF1A;</p>
+<ul>
+<li><code>anonymous</code>(&#x9ED8;&#x8BA4;) &#x5728;&#x52A0;&#x8F7D;&#x6B64;&#x811A;&#x672C;&#x8D44;&#x6E90;&#x65F6;&#x4E0D;&#x4F1A;&#x5E26;&#x4E0A;&#x7528;&#x6237;&#x7684; Cookies&#xFF1B;</li>
+<li><code>use-credentials</code> &#x5728;&#x52A0;&#x8F7D;&#x6B64;&#x811A;&#x672C;&#x8D44;&#x6E90;&#x65F6;&#x4F1A;&#x5E26;&#x4E0A;&#x7528;&#x6237;&#x7684; Cookies&#x3002;</li>
+</ul>
+<p>&#x901A;&#x5E38;&#x7528;&#x8BBE;&#x7F6E; crossorigin &#x6765;&#x83B7;&#x53D6;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#x7684;&#x811A;&#x672C;&#x6267;&#x884C;&#x65F6;&#x7684;&#x8BE6;&#x7EC6;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x3002;</p>
+<h2 id="librarytarget-&#x548C;-library">libraryTarget &#x548C; library</h2>
+<p>&#x5F53;&#x7528; Webpack &#x53BB;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x88AB;&#x5176;&#x4ED6;&#x6A21;&#x5757;&#x5BFC;&#x5165;&#x4F7F;&#x7528;&#x7684;&#x5E93;&#x65F6;&#x9700;&#x8981;&#x7528;&#x5230;&#x5B83;&#x4EEC;&#x3002;</p>
+<ul>
+<li><code>output.libraryTarget</code> &#x914D;&#x7F6E;&#x4EE5;&#x4F55;&#x79CD;&#x65B9;&#x5F0F;&#x5BFC;&#x51FA;&#x5E93;&#x3002;</li>
+<li><code>output.library</code> &#x914D;&#x7F6E;&#x5BFC;&#x51FA;&#x5E93;&#x7684;&#x540D;&#x79F0;&#x3002;</li>
+</ul>
+<p>&#x5B83;&#x4EEC;&#x901A;&#x5E38;&#x642D;&#x914D;&#x5728;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002;</p>
+<p><code>output.libraryTarget</code> &#x662F;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#xFF0C;&#x652F;&#x6301;&#x4EE5;&#x4E0B;&#x914D;&#x7F6E;&#x3002;</p>
+<h3 id="var-&#x9ED8;&#x8BA4;">var (&#x9ED8;&#x8BA4;)</h3>
+<p>&#x7F16;&#x5199;&#x7684;&#x5E93;&#x5C06;&#x901A;&#x8FC7; <code>var</code> &#x88AB;&#x8D4B;&#x503C;&#x7ED9;&#x901A;&#x8FC7; <code>library</code> &#x6307;&#x5B9A;&#x540D;&#x79F0;&#x7684;&#x53D8;&#x91CF;&#x3002;</p>
+<p>&#x5047;&#x5982;&#x914D;&#x7F6E;&#x4E86; <code>output.library=&apos;LibraryName&apos;</code>&#xFF0C;&#x5219;&#x8F93;&#x51FA;&#x548C;&#x4F7F;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// Webpack &#x8F93;&#x51FA;&#x7684;&#x4EE3;&#x7801;</span>
+<span class="hljs-keyword">var</span> LibraryName = lib_code;
+
+<span class="hljs-comment">// &#x4F7F;&#x7528;&#x5E93;&#x7684;&#x65B9;&#x6CD5;</span>
+LibraryName.doSomething();
+</code></pre>
+<p>&#x5047;&#x5982; <code>output.library</code> &#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x5C06;&#x76F4;&#x63A5;&#x8F93;&#x51FA;&#xFF1A;</p>
+<pre><code class="lang-js">lib_code
+</code></pre>
+<blockquote>
+<p>&#x5176;&#x4E2D; <code>lib_code</code> &#x4EE3;&#x6307;&#x5BFC;&#x51FA;&#x5E93;&#x7684;&#x4EE3;&#x7801;&#x5185;&#x5BB9;&#xFF0C;&#x662F;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x4E00;&#x4E2A;&#x81EA;&#x6267;&#x884C;&#x51FD;&#x6570;&#x3002;</p>
+</blockquote>
+<h3 id="commonjs">commonjs</h3>
+<p>&#x7F16;&#x5199;&#x7684;&#x5E93;&#x5C06;&#x901A;&#x8FC7; CommonJS &#x89C4;&#x8303;&#x5BFC;&#x51FA;&#x3002;</p>
+<p>&#x5047;&#x5982;&#x914D;&#x7F6E;&#x4E86; <code>output.library=&apos;LibraryName&apos;</code>&#xFF0C;&#x5219;&#x8F93;&#x51FA;&#x548C;&#x4F7F;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// Webpack &#x8F93;&#x51FA;&#x7684;&#x4EE3;&#x7801;</span>
+exports[<span class="hljs-string">&apos;LibraryName&apos;</span>] = lib_code;
+
+<span class="hljs-comment">// &#x4F7F;&#x7528;&#x5E93;&#x7684;&#x65B9;&#x6CD5;</span>
+<span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;library-name-in-npm&apos;</span>)[<span class="hljs-string">&apos;LibraryName&apos;</span>].doSomething();
+</code></pre>
+<blockquote>
+<p>&#x5176;&#x4E2D; <code>library-name-in-npm</code> &#x662F;&#x6307;&#x6A21;&#x5757;&#x53D1;&#x5E03;&#x5230; Npm &#x4EE3;&#x7801;&#x4ED3;&#x5E93;&#x65F6;&#x7684;&#x540D;&#x79F0;&#x3002;</p>
+</blockquote>
+<h3 id="commonjs2">commonjs2</h3>
+<p>&#x7F16;&#x5199;&#x7684;&#x5E93;&#x5C06;&#x901A;&#x8FC7; CommonJS2 &#x89C4;&#x8303;&#x5BFC;&#x51FA;&#xFF0C;&#x8F93;&#x51FA;&#x548C;&#x4F7F;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// Webpack &#x8F93;&#x51FA;&#x7684;&#x4EE3;&#x7801;</span>
+<span class="hljs-built_in">module</span>.exports = lib_code;
+
+<span class="hljs-comment">// &#x4F7F;&#x7528;&#x5E93;&#x7684;&#x65B9;&#x6CD5;</span>
+<span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;library-name-in-npm&apos;</span>).doSomething();
+</code></pre>
+<blockquote>
+<p>CommonJS2 &#x548C; CommonJS &#x89C4;&#x8303;&#x5F88;&#x76F8;&#x4F3C;&#xFF0C;&#x5DEE;&#x522B;&#x5728;&#x4E8E; CommonJS &#x53EA;&#x80FD;&#x7528; <code>exports</code> &#x5BFC;&#x51FA;&#xFF0C;&#x800C; CommonJS2 &#x5728; CommonJS &#x7684;&#x57FA;&#x7840;&#x4E0A;&#x589E;&#x52A0;&#x4E86; <code>module.exports</code> &#x7684;&#x5BFC;&#x51FA;&#x65B9;&#x5F0F;&#x3002;</p>
+<p>&#x5728; <code>output.libraryTarget</code> &#x4E3A; <code>commonjs2</code> &#x65F6;&#xFF0C;&#x914D;&#x7F6E; <code>output.library</code> &#x5C06;&#x6CA1;&#x6709;&#x610F;&#x4E49;&#x3002;</p>
+</blockquote>
+<h3 id="this">this</h3>
+<p>&#x7F16;&#x5199;&#x7684;&#x5E93;&#x5C06;&#x901A;&#x8FC7; <code>this</code> &#x88AB;&#x8D4B;&#x503C;&#x7ED9;&#x901A;&#x8FC7; <code>library</code> &#x6307;&#x5B9A;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x8F93;&#x51FA;&#x548C;&#x4F7F;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// Webpack &#x8F93;&#x51FA;&#x7684;&#x4EE3;&#x7801;</span>
+<span class="hljs-keyword">this</span>[<span class="hljs-string">&apos;LibraryName&apos;</span>] = lib_code;
+
+<span class="hljs-comment">// &#x4F7F;&#x7528;&#x5E93;&#x7684;&#x65B9;&#x6CD5;</span>
+<span class="hljs-keyword">this</span>.LibraryName.doSomething();
+</code></pre>
+<h3 id="window">window</h3>
+<p>&#x7F16;&#x5199;&#x7684;&#x5E93;&#x5C06;&#x901A;&#x8FC7; <code>window</code> &#x88AB;&#x8D4B;&#x503C;&#x7ED9;&#x901A;&#x8FC7; <code>library</code> &#x6307;&#x5B9A;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5373;&#x628A;&#x5E93;&#x6302;&#x8F7D;&#x5230; <code>window</code> &#x4E0A;&#xFF0C;&#x8F93;&#x51FA;&#x548C;&#x4F7F;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// Webpack &#x8F93;&#x51FA;&#x7684;&#x4EE3;&#x7801;</span>
+<span class="hljs-built_in">window</span>[<span class="hljs-string">&apos;LibraryName&apos;</span>] = lib_code;
+
+<span class="hljs-comment">// &#x4F7F;&#x7528;&#x5E93;&#x7684;&#x65B9;&#x6CD5;</span>
+<span class="hljs-built_in">window</span>.LibraryName.doSomething();
+</code></pre>
+<h3 id="global">global</h3>
+<p>&#x7F16;&#x5199;&#x7684;&#x5E93;&#x5C06;&#x901A;&#x8FC7; <code>global</code> &#x88AB;&#x8D4B;&#x503C;&#x7ED9;&#x901A;&#x8FC7; <code>library</code> &#x6307;&#x5B9A;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5373;&#x628A;&#x5E93;&#x6302;&#x8F7D;&#x5230; <code>global</code> &#x4E0A;&#xFF0C;&#x8F93;&#x51FA;&#x548C;&#x4F7F;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// Webpack &#x8F93;&#x51FA;&#x7684;&#x4EE3;&#x7801;</span>
+global[<span class="hljs-string">&apos;LibraryName&apos;</span>] = lib_code;
+
+<span class="hljs-comment">// &#x4F7F;&#x7528;&#x5E93;&#x7684;&#x65B9;&#x6CD5;</span>
+global.LibraryName.doSomething();
+</code></pre>
+<h2 id="libraryexport">libraryExport</h2>
+<p><code>output.libraryExport</code> &#x914D;&#x7F6E;&#x8981;&#x5BFC;&#x51FA;&#x7684;&#x6A21;&#x5757;&#x4E2D;&#x54EA;&#x4E9B;&#x5B50;&#x6A21;&#x5757;&#x9700;&#x8981;&#x88AB;&#x5BFC;&#x51FA;&#x3002;
+&#x5B83;&#x53EA;&#x6709;&#x5728; <code>output.libraryTarget</code> &#x88AB;&#x8BBE;&#x7F6E;&#x6210; <code>commonjs</code> &#x6216;&#x8005; <code>commonjs2</code> &#x65F6;&#x4F7F;&#x7528;&#x624D;&#x6709;&#x610F;&#x4E49;&#x3002;</p>
+<p>&#x5047;&#x5982;&#x8981;&#x5BFC;&#x51FA;&#x7684;&#x6A21;&#x5757;&#x6E90;&#x4EE3;&#x7801;&#x662F;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> a=<span class="hljs-number">1</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> b=<span class="hljs-number">2</span>;
+</code></pre>
+<p>&#x73B0;&#x5728;&#x4F60;&#x60F3;&#x8BA9;&#x6784;&#x5EFA;&#x8F93;&#x51FA;&#x7684;&#x4EE3;&#x7801;&#x53EA;&#x5BFC;&#x51FA;&#x5176;&#x4E2D;&#x7684; <code>a</code>&#xFF0C;&#x53EF;&#x4EE5;&#x628A; <code>output.libraryExport</code> &#x8BBE;&#x7F6E;&#x6210; <code>a</code>&#xFF0C;&#x90A3;&#x4E48;&#x6784;&#x5EFA;&#x8F93;&#x51FA;&#x7684;&#x4EE3;&#x7801;&#x548C;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x5C06;&#x53D8;&#x6210;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// Webpack &#x8F93;&#x51FA;&#x7684;&#x4EE3;&#x7801;</span>
+<span class="hljs-built_in">module</span>.exports = lib_code[<span class="hljs-string">&apos;a&apos;</span>];
+
+<span class="hljs-comment">// &#x4F7F;&#x7528;&#x5E93;&#x7684;&#x65B9;&#x6CD5;</span>
+<span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;library-name-in-npm&apos;</span>)===<span class="hljs-number">1</span>;
+</code></pre>
+<blockquote>
+<p>&#x4EE5;&#x4E0A;&#x53EA;&#x662F; <code>output</code> &#x91CC;&#x5E38;&#x7528;&#x7684;&#x914D;&#x7F6E;&#x9879;&#xFF0C;&#x8FD8;&#x6709;&#x90E8;&#x5206;&#x51E0;&#x4E4E;&#x7528;&#x4E0D;&#x4E0A;&#x7684;&#x914D;&#x7F6E;&#x9879;&#x6CA1;&#x6709;&#x4E00;&#x4E00;&#x5217;&#x4E3E;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728; <a href="https://webpack.js.org/configuration/output/" target="_blank">Webpack &#x5B98;&#x65B9;&#x6587;&#x6863;</a> &#x4E0A;&#x67E5;&#x9605;&#x5B83;&#x4EEC;&#x3002;</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2-1Entry.html" class="navigation navigation-prev " aria-label="Previous page: 2-1 Entry">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2-3Module.html" class="navigation navigation-next " aria-label="Next page: 2-3 Module">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2-2 Output","level":"1.4.2","depth":2,"next":{"title":"2-3 Module","level":"1.4.3","depth":2,"path":"2配置/2-3Module.md","ref":"2配置/2-3Module.md","articles":[]},"previous":{"title":"2-1 Entry","level":"1.4.1","depth":2,"path":"2配置/2-1Entry.md","ref":"2配置/2-1Entry.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github-buttons"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github-buttons":{"buttons":[{"user":"gwuhaolin","type":"follow","size":"small","width":"150"},{"user":"gwuhaolin","repo":"dive-into-webpack","type":"star","size":"small"}]},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"吴浩麟","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"9787121331725","variables":{},"title":"深入浅出 Webpack","language":"zh-hans","gitbook":"*","description":"本书按照入门、配置、实战、优化、原理的路线层层深入，涵盖了 Webpack 的方方面面。对于小白，本书可以作为 Webpack 入门教程，对于老手，本书可以进一步加深你对 Webpack 的理解。"},"file":{"path":"2配置/2-2Output.md","mtime":"2021-07-01T07:20:17.212Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-01T07:20:58.537Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
